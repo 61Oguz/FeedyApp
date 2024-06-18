@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import {useNavigate} from 'react-router-dom';
-
+import './LoginForm.css';
 import {FaLock, FaUser} from "react-icons/fa";
 import axios from "axios";
 
@@ -26,7 +26,7 @@ const LoginForm = () => {
                     alert("Incorrect Email and Password not match");
                 }
             }, fail => {
-                console.error(fail); // Error!
+                console.error(fail);
             });
         } catch (err) {
             alert(err);
@@ -35,7 +35,7 @@ const LoginForm = () => {
     }
 
     return (
-        <>
+        <div>
             <div className={"logo-container"}>
                 <img src="../../../public/FeedyLogo.png" className="logo"/>
             </div>
@@ -52,7 +52,7 @@ const LoginForm = () => {
                                    setUserEmail(event.target.value)
                                }}
                         />
-                        <FaUser className={"icon"}/>
+                        <FaUser className={"icon1"}/>
                     </div>
                     <div className={"input-box"}>
                         <input type={"password"}
@@ -62,17 +62,18 @@ const LoginForm = () => {
                                    setUserPassword(event.target.value)
                                }}
                         />
-                        <FaLock className={"icon"}/>
+                        <FaLock className={"icon1"}/>
                     </div>
                     <button type={"submit"}
-                     onClick={login}> Login</button>
+                            onClick={login}> Login
+                    </button>
                     <div className={"register-link"}>
                         <p>Don´t you have an Account yet? <a href={"/register"}>Register Now.</a></p>
 
                     </div>
                 </form>
             </div>
-        </>
+        </div>
     );
 };
 

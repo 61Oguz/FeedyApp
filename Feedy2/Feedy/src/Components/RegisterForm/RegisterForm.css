@@ -1,7 +1,7 @@
 .wrapper {
-    width: 120%; /* Adjust width for smaller screens */
-    max-width: 480px; /* Set maximum width */
-    margin: 0 auto; /* Center align */
+
+    max-width: 480px;
+
     background: rgba(5, 5, 5, 0.71);
     border: 5px solid rgba(255, 255, 255, .2);
     backdrop-filter: blur(30px);
@@ -55,9 +55,9 @@
 
 .input-box .icon {
     position: absolute;
-    right: 20px;
+    right: 30px;
     top: 50%;
-    transform: translateY(-50%);
+    transform: translateY(-50%) translateX(-5px); /* add this line */
     font-size: 16px;
 }
 

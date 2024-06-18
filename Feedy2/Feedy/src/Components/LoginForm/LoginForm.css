@@ -11,11 +11,13 @@
     text-align: center;
     position: relative;
     margin-top: -30px;
+    margin-left: 100px;
 }
 .logo-container {
     margin-top: -411px;
     padding: 30px 50px;
     text-align: center;
+    margin-left: 100px;
 }
 .logo {
     width: 155px;
@@ -47,11 +49,11 @@
     color: #fff;
 }
 
-.input-box .icon {
+.input-box .icon1 {
     position: absolute;
-    right: 20px;
-    top: 50% ;
-    transform: translateY(-70%);
+    right: 30px;
+    top: 50%;
+    transform: translateY(-50%) translateX(-5px); /* add this line */
     font-size: 16px;
 }
 
