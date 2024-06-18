@@ -2,6 +2,7 @@ import React, {useState} from 'react';
 import {useNavigate} from 'react-router-dom';
 import './LoginForm.css';
 import {FaLock, FaUser} from "react-icons/fa";
+import { IoIosLogIn } from "react-icons/io";
 import axios from "axios";
 
 const LoginForm = () => {
@@ -65,7 +66,10 @@ const LoginForm = () => {
                         <FaLock className={"icon1"}/>
                     </div>
                     <button type={"submit"}
-                            onClick={login}> Login
+                            onClick={login}
+                    >
+                        Login <IoIosLogIn className={"icon2"}/>
+
                     </button>
                     <div className={"register-link"}>
                         <p>Don´t you have an Account yet? <a href={"/register"}>Register Now.</a></p>
