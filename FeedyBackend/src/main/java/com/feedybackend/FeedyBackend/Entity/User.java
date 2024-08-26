@@ -9,69 +9,134 @@ import jakarta.persistence.Table;
 @Table(name = "user")
 public class User {
 
-    @Id
-    @Column(name = "user_id", length = 45)
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int userId;
+  // User Data Points
+  @Id
+  @Column(name = "user_id", length = 45)
+  @GeneratedValue(strategy = GenerationType.IDENTITY)
+  private int userId;
 
-    @Column(name = "user_name", length = 245)
-    private String userName;
+  @Column(name = "user_name", length = 245)
+  private String userName;
 
-    @Column(name = "user_email", length = 245)
-    private String userEmail;
+  @Column(name = "user_email", length = 245)
+  private String userEmail;
 
-    @Column(name = "password", length = 245)
-    private String userPassword;
+  @Column(name = "password", length = 245)
+  private String userPassword;
 
-    public User(int userId, String userName, String userEmail, String userPassword) {
-        this.userId = userId;
-        this.userName = userName;
-        this.userEmail = userEmail;
-        this.userPassword = userPassword;
-    }
+  @Column(name = "age", length = 245)
+  private int age;
 
-    public User() {
-    }
+  @Column(name = "height", length = 255)
+  private double height;
 
-    public int getUserId() {
-        return userId;
-    }
+  @Column(name = "weight", length = 255)
+  private double weight;
 
-    public void setUserId(int userId) {
-        this.userId = userId;
-    }
+  @Column(name = "sex", length = 255)
+  private String sex;
 
-    public String getUserName() {
-        return userName;
-    }
+  // Constructors
+  public User(
+      int userId,
+      String userName,
+      String userEmail,
+      String userPassword,
+      int age,
+      String sex,
+      double height,
+      double weight) {
+    this.userId = userId;
+    this.userName = userName;
+    this.userEmail = userEmail;
+    this.userPassword = userPassword;
+    this.age = age;
+    this.sex = sex;
+    this.height = height;
+    this.weight = weight;
+  }
 
-    public void setUserName(String userName) {
-        this.userName = userName;
-    }
+  // Getter Setters
+  public User() {}
 
-    public String getUserEmail() {
-        return userEmail;
-    }
+  public int getAge() {
+    return age;
+  }
 
-    public void setUserEmail(String userEmail) {
-        this.userEmail = userEmail;
-    }
+  public void setAge(int age) {
+    this.age = age;
+  }
 
-    public String getUserPassword() {
-        return userPassword;
-    }
+  public double getHeight() {
+    return height;
+  }
 
-    public void setUserPassword(String userPassword) {
-        this.userPassword = userPassword;
-    }
+  public String getSex() {
+    return sex;
+  }
 
-    @Override
-    public String toString() {
-        return "User{" +
-                "userId=" + userId +
-                ", userName='" + userName + '\'' +
-                ", userEmail='" + userEmail + '\'' +
-                ", userPassword='" + userPassword + '\'' +
-                '}';
-    }
+  public void setSex(String sex) {
+    this.sex = sex;
+  }
+
+  public void setHeight(double height) {
+    this.height = height;
+  }
+
+  public double getWeight() {
+    return weight;
+  }
+
+  public void setWeight(double weight) {
+    this.weight = weight;
+  }
+
+  public int getUserId() {
+    return userId;
+  }
+
+  public void setUserId(int userId) {
+    this.userId = userId;
+  }
+
+  public String getUserName() {
+    return userName;
+  }
+
+  public void setUserName(String userName) {
+    this.userName = userName;
+  }
+
+  public String getUserEmail() {
+    return userEmail;
+  }
+
+  public void setUserEmail(String userEmail) {
+    this.userEmail = userEmail;
+  }
+
+  public String getUserPassword() {
+    return userPassword;
+  }
+
+  public void setUserPassword(String userPassword) {
+    this.userPassword = userPassword;
+  }
+
+  @Override
+  public String toString() {
+    return "User{"
+        + "userId="
+        + userId
+        + ", userName='"
+        + userName
+        + '\''
+        + ", userEmail='"
+        + userEmail
+        + '\''
+        + ", userPassword='"
+        + userPassword
+        + '\''
+        + '}';
+  }
 }

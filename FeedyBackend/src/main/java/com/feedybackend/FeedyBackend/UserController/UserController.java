@@ -18,20 +18,32 @@ public class UserController {
 
   @Autowired private UserService userService;
 
+  //Saves the user to the database.
   @PostMapping("/save")
-  public String saveUser(@Valid @RequestBody UserDTO userDTO) {
+  public ResponseEntity<?> saveUser(@Valid @RequestBody UserDTO userDTO) {
     String id = userService.addUser(userDTO);
-    return id;
+    return ResponseEntity.ok(id);
   }
 
+  //Gets all the saved users from the database as a List.
   @GetMapping("/all")
   public List<UserDTO> getAllUsers() {
     return userService.getAllUsers();
   }
 
+  //Sends the Login request.
   @PostMapping("/login")
   public ResponseEntity<?> loginUser(@RequestBody LoginDTO loginDTO) {
     LoginResponse loginResponse = userService.loginUser(loginDTO);
     return ResponseEntity.ok(loginResponse);
   }
+
+
+  @GetMapping("/{id}")
+  public ResponseEntity<?> getUserById(@PathVariable int id) {
+    UserDTO userDTO = userService.getUserById(id);
+    return ResponseEntity.ok(userDTO);
+  }
+
+
 }

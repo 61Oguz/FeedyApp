@@ -1,0 +1,31 @@
+.profile-wrapper {
+  width: 480px;
+  background: rgba(1, 40, 33, 0.73);
+  border: 5px solid rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(30px);
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+  color: white;
+  border-radius: 10px;
+  padding: 30px 40px;
+  text-align: center;
+  position: relative;
+  margin-top: -87px;
+  margin-left: 50px;
+}
+
+.profile-wrapper .input-box {
+  position: relative;
+  width: 100%;
+  height: 50px;
+  margin: 20px 0; /* Adjust margin for smaller screens */
+}
+
+profile-button {
+  padding: 10px 20px;
+  font-size: 16px;
+  color: #fff;
+  background-color: #007bff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}

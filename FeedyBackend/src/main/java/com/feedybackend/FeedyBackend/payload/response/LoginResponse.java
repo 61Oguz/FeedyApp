@@ -2,11 +2,13 @@ package com.feedybackend.FeedyBackend.payload.response;
 
 public class LoginResponse {
     String message;
-    boolean status ;
+    boolean status;
+    int userId;
 
-    public LoginResponse(String message, boolean status) {
+    public LoginResponse(String message, boolean status, int userId) {
         this.message = message;
         this.status = status;
+        this.userId = userId;
     }
 
     public String getMessage() {
@@ -23,5 +25,13 @@ public class LoginResponse {
 
     public void setStatus(boolean status) {
         this.status = status;
+    }
+
+    public int getUserId() {
+        return userId;
+    }
+
+    public void setUserId(int userId) {
+        this.userId = userId;
     }
 }

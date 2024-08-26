@@ -14,6 +14,7 @@ public interface UserService {
 
     List<UserDTO> getAllUsers();
 
-
     LoginResponse loginUser(LoginDTO loginDTO);
+
+    UserDTO getUserById(int id);
 }
