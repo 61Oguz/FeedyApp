@@ -11,6 +11,8 @@ body {
   align-items: center;
   min-height: 100vh;
   background: #78f4b5;
+  font-family: -apple-system, serif;
+  font-size: 16px;
 }
 
 .register-wrapper {
@@ -52,16 +54,17 @@ body {
 }
 
 .drop-down {
+  position: relative;
   width: calc(100% - 40px); /* Adjust input width for icon */
   height: 50px;
-  background: transparent;
   outline: none;
   border: 2px solid rgba(255, 255, 255, 0.2);
   border-radius: 40px;
   font-size: 16px;
-  color: white;
-  padding: 10px 20px 20px 40px; /* Adjust padding for smaller screens */
+  padding: 10px 13px 16px 40px; /* Adjust padding for smaller screens */
   box-sizing: border-box; /* Ensure padding and border are included in width */
+
+  z-index: 1;
 }
 .drop-down .p-dropdown {
   width: 100%;
@@ -75,24 +78,41 @@ body {
   padding: 10px 20px;
   box-sizing: border-box;
   margin: 20px 0;
+  align-items: center;
+  display: flex;
+  z-index: 1;
+  position: relative;
+  overflow: visible;
 }
 
 .drop-down .p-dropdown-label {
   color: rgb(255, 255, 255); /* Color for the placeholder */
+  align-items: start;
+  text-align: left ;
+  padding: 2px;
+  font-size: 17px;
+
 }
 
-.drop-down .p-dropdown-item {
+.drop-down .p-dropdown-items {
   color: #ffffff;
   background-color: rgba(255, 255, 255, 0.9);
+  z-index: 1;
+
 }
 
 .drop-down .p-dropdown-item:hover {
   background-color: rgba(255, 255, 255, 1);
+  color: white;
 }
 
 .drop-down .p-dropdown-panel {
-  background-color: rgb(255, 255, 255);
-  border: 2px solid rgba(255, 255, 255, 0.2);
+  background-color: #f9f9f9 ;
+  z-index: 1 ;
+}
+.register-wrapper .drop-down .p-dropdown-open {
+  background-color: #ed1212;
+
 }
 
 .input-box input {
