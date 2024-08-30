@@ -14,11 +14,13 @@ public class UserDTO {
   private int age;
   @NotNull(message = "Sex cannot be null")
   private String sex ;
+
+  private String activity;
+
   @NotNull(message = "Height cannot be null")
   private double height;
   @NotNull(message = "Weight cannot be null")
   private double weight;
-
 
 
   // Constructors
@@ -30,7 +32,8 @@ public class UserDTO {
       int age,
       String sex,
       double height,
-      double weight) {
+      double weight,
+      String activity) {
     this.userId = userId;
     this.userName = userName;
     this.userEmail = userEmail;
@@ -39,6 +42,7 @@ public class UserDTO {
     this.sex = sex;
     this.height = height;
     this.weight = weight;
+    this.activity = activity ;
   }
 
   public UserDTO() {}
@@ -106,6 +110,14 @@ public class UserDTO {
 
   public void setSex(String sex) {
     this.sex = sex;
+  }
+
+  public String getActivity() {
+    return activity;
+  }
+
+  public void setActivity(String activity) {
+    this.activity = activity;
   }
 
   @Override
