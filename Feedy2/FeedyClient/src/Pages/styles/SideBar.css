@@ -1,0 +1,86 @@
+.sidebar {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 180px;
+    height: 100vh; /* Full height of viewport */
+    background-color: rgba(1, 40, 33, 0.73);
+    padding: 20px;
+    z-index: 1; /* Ensure sidebar is above other content */
+    transition: width 0.6s ease; /* Smooth transition for width */
+    overflow: visible; /* Hide overflow when closed logo kayboluyor */
+}
+
+.sidebar.open {
+    width: 180px; /* Width when sidebar is open */
+    transition: width 0.6s ease;
+}
+
+.sidebar.closed {
+    width: 85px; /* Width when sidebar is closed */
+}
+
+.sidebar-logo-container {
+    width: 0rem;
+    margin-top: -100px;
+    margin-bottom: -80px;
+    padding: 10px 50px;
+    margin-left: -138px;
+    cursor: pointer;
+
+}
+
+.sidebar-logo {
+    width: 305px; /* Adjust the size of the logo */
+
+}
+
+.sidebar-buttons {
+    width: 100%;
+    height: 45px;
+    background: #ffffff;
+    border: #000000;
+    outline: none;
+    border-radius: 18px;
+    box-shadow: 0 0 10px rgb(0, 0, 0, 0.1);
+    cursor: pointer;
+    font-size: 16px;
+    color: #333;
+    font-weight: 700;
+    margin-top: 20px; /* Adjust margin for smaller screens */
+    margin-left: 0;
+}
+
+.sideBar-info {
+    font-size: 18px;
+    margin-top: 3px;
+    margin-bottom: 3px;
+}
+
+.sidebar-divider {
+    border: 0;
+    height: 1px;
+    background-color: #fff;
+    margin: 10px 0;
+}
+
+.toggle-sidebar-btn {
+    width: 60%;
+    height: 45px;
+    background: #ffffff;
+    border: #000000;
+    outline: none;
+    border-radius: 18px;
+    box-shadow: 0 0 10px rgb(0, 0, 0, 0.1);
+    cursor: pointer;
+    font-size: 16px;
+    color: #333;
+    font-weight: 700;
+    margin-top: 20px;
+    margin-left: 0;
+    position: absolute;
+    bottom: 20px; /* Position at the bottom of the sidebar */
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 6px ;
+}

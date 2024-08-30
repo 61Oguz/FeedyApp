@@ -1,0 +1,164 @@
+
+.TodoWrapper {
+  background-color: rgba(9, 82, 67, 0.73);
+  border-radius: 10px;
+  width: 500px; /* Adjust as necessary */
+  max-width: 1500px;
+  position: fixed; /* Change to fixed */
+  top: 80px; /* Adjust top position */
+  left: 16%;
+  overflow-y: auto; /* Add overflow for scrolling */
+  max-height: calc(100vh - 100px); /* Set max-height to fit within viewport */
+  box-shadow: 0 0 10px rgba(1, 10, 10, 0.1);
+  padding: 3rem 3rem 7.141rem;
+  font-family: Georgia;
+  font-weight: normal;
+  min-height: 795px;
+  max-height: 820px;
+}
+
+.TodoWrapper.sidebar-closed{
+
+  background-color: rgba(9, 82, 67, 0.73);
+  border-radius: 10px;
+  width: 500px; /* Adjust as necessary */
+  max-width: 1500px;
+  position: fixed; /* Change to fixed */
+  top: 80px; /* Adjust top position */
+  left: 10%;
+  overflow-y: auto; /* Add overflow for scrolling */
+  max-height: calc(100vh - 100px); /* Set max-height to fit within viewport */
+  box-shadow: 0 0 10px rgba(1, 10, 10, 0.1);
+  padding: 3rem 3rem 7.141rem;
+  font-family: Georgia;
+  font-weight: normal;
+  min-height: 795px;
+  transition:  0.6s ease;
+
+}
+
+
+.PieChartWrapper {
+  background: transparent;
+  backdrop-filter: blur(30pxpx);
+  padding: 0.2rem 4rem;
+  border-radius: 10px;
+  width: 400px; /* Adjust as necessary */
+  max-width: 650px;
+  position: fixed; /* Fixed position */
+  top: 80px; /* Aligns with the TodoWrapper */
+  left: 60%; /* Adjust as necessary to position it near the TodoWrapper */
+  margin-top: 0;
+  margin-left: 0;
+  max-height: calc(100vh - 100px); /* Set max-height to fit within viewport */
+  box-shadow: 0 0 10px rgba(1, 10, 10, 0.1); /* Optional: adds a shadow for better visual separation */
+  height: 295px;
+}
+
+.DoughnutChartWrapper {
+  background: transparent;
+  backdrop-filter: blur(30pxpx);
+  padding: 0.3rem 4rem;
+  border-radius: 10px;
+  width: 400px; /* Adjust as necessary */
+  max-width: 650px;
+  position: fixed; /* Fixed position */
+  top: 480px; /* Aligns with the TodoWrapper */
+  left: 60%; /* Adjust as necessary to position it near the TodoWrapper */
+  margin-top: -65px;
+  margin-left: 0;
+
+  box-shadow: 0 0 10px rgba(1, 10, 10, 0.1); /* Optional: adds a shadow for better visual separation */
+  height: 295px;
+}
+
+.download-button {
+  position: fixed;
+  top: 540px;
+  right: 13px;
+  background: rgba(1, 40, 33, 0.73);
+  color: rgb(255, 255, 255);
+
+  border-radius: 5px;
+  padding: 0.3rem;
+  cursor: pointer;
+}
+
+.nutrition-labels {
+  margin-bottom: 10px;
+  margin-top: 10px;
+  font-size: 19px;
+  font-weight: inherit;
+}
+.searchInput {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  width: 100%;
+  box-sizing: border-box;
+  font-size: 16px;
+}
+
+.suggestion-item {
+  padding: 5px;
+  cursor: pointer;
+}
+
+.suggestion-item:hover {
+  background-color: rgb(255, 255, 255);
+}
+
+.todo-input {
+  outline: none;
+  background: none;
+  border: 1px solid #ffffff;
+  padding: 0.5rem 1rem;
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+  width: 300px;
+  color: #ffffff;
+}
+
+.todo-input::placeholder {
+  color: #ffffff;
+}
+
+.todo-btn {
+  background: rgba(30, 255, 211, 0.27);
+  color: #fff;
+  margin-left: 10px;
+  border-radius: 5px;
+  padding: 0.3rem;
+  cursor: pointer;
+}
+.delete-btn {
+  background: #f10505;
+  color: #f1eeee;
+  padding: 0rem;
+  cursor: pointer;
+  margin-left: 15px;
+}
+
+.list-item {
+  color: #f1eeee;
+  cursor: pointer;
+}
+
+/* FoodLog.css */
+.suggestions-container {
+  max-height: 500px;
+  overflow-y: auto;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background-color: #fff;
+}
+
+.suggestion-item {
+  padding: 3px;
+  cursor: pointer;
+}
+
+.suggestion-item:hover {
+  background-color: #f0f0f0;
+}
+

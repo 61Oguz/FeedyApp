@@ -1,0 +1,58 @@
+.header-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30px 20px;
+  background-color: rgba(162, 162, 162, 0.27);
+  position: fixed;
+  top: 0;
+  left: 180px; /* Ensure the header starts from the left edge */
+  width: 100%; /* Ensure the header spans the entire width */
+  z-index: 300;
+  box-sizing: border-box; /* Include padding and border in the element's total width and height */
+  transition: width 0.6s ease;
+}
+
+.header-logo-container {
+  flex: 1;
+}
+
+.header-right {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  flex: 1;
+}
+
+.user-name {
+  position: fixed;
+  top: 16px; /* Adjust as needed */
+  right: 120px; /* Adjust to give space between username and logout button */
+  font-size: 20px;
+  margin: 0; /* Remove margins to avoid unexpected offsets */
+}
+
+.logout-button {
+  position: fixed;
+  top: 1px; /* Aligns with the username */
+  right: 20px; /* Adjust to keep it at the top right corner */
+  padding: 10px 20px;
+  font-size: 15px;
+  color: #fff;
+  background-color: #007bff;
+  border: none;
+  border-radius: 2px;
+  cursor: pointer;
+}
+
+.logout-button:hover {
+  background-color: #0056b3;
+}
+
+.header-header.sidebar-closed {
+  transition: width 0.6s ease;
+  z-index: 0;
+  backdrop-filter: blur(0px);
+  left: 50px; /* Adjust this based on the sidebar width when closed */
+  width: calc(100% - 50px); /* Ensure the header spans the entire width minus sidebar width when closed */
+}

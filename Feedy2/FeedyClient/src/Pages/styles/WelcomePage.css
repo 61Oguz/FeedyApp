@@ -1,0 +1,109 @@
+body {
+  overflow: hidden;
+}
+.welcome-container {
+  display: flex;
+  flex-direction: row;
+  overflow-y: hidden;
+}
+
+.main-content {
+  transition: margin-left 0.3s ease;
+  padding: 20px;
+  margin-left: 200px;
+}
+
+.main-content.sidebar-closed {
+  margin-left: 70px;
+}
+
+.chart-container {
+  margin-top: 540px;
+  margin-left: -484px;
+  margin-bottom: -5px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.Welcome-Completion-Graphs {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 30px;
+  margin-left: -320px
+}
+
+.line-chart, .bar-chart {
+  width: 100%;
+  max-width: 600px;
+}
+
+.completion-rate {
+  position: fixed;
+  text-align: center;
+  top: 3.5rem;
+  left: 48rem;
+  align-items: center;
+}
+
+
+
+.Welcome-Completion-Graphs1,
+.Welcome-Completion-Graphs2,
+.Welcome-Completion-Graphs3,
+.Welcome-Completion-Graphs4 {
+  width: 185px;
+}
+
+.Welcome-CalChartWrapper {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  margin-top: 40px;
+  justify-content: center;
+}
+
+
+.Donut-Header{
+  text-align: center;
+  align-items: center;
+  position: fixed;
+  top: 110px;
+  left: 380px;
+}
+
+
+.content-box {
+  top: 130px ;
+  position: fixed;
+  left: 58% ;
+  display: flex;
+  align-items: center;
+  background-color: #75eab0;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+}
+.user-feedback-box {
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 20px;
+  margin: 20px;
+  width: 410px;
+  height: 315px;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.user-feedback-box h3, .user-feedback-box h4 {
+  margin-bottom: 10px;
+}
+
+.user-feedback-box p {
+  margin: 5px 0;
+}
+
+
