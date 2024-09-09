@@ -36,7 +36,8 @@ public class UserIMPL implements UserService {
             userDTO.getAge(),
             userDTO.getSex(),
             userDTO.getHeight(),
-            userDTO.getWeight());
+            userDTO.getWeight(),
+                userDTO.getActivity());
 
     userRepo.save(user);
     return String.valueOf(user.getUserId());
@@ -55,7 +56,9 @@ public class UserIMPL implements UserService {
                     user.getAge(),
                     user.getSex(),
                     user.getHeight(),
-                    user.getWeight()))
+                    user.getWeight(),
+                    user.getActivity())
+                )
         .collect(Collectors.toList());
   }
 
@@ -95,7 +98,8 @@ public class UserIMPL implements UserService {
           u.getAge(),
           u.getSex(),
           u.getHeight(),
-          u.getWeight());
+          u.getWeight(),
+          u.getActivity());
     } else {
       throw new RuntimeException("User not found");
     }

@@ -36,6 +36,9 @@ public class User {
   @Column(name = "sex", length = 255)
   private String sex;
 
+  @Column(name = "activity", length = 255)
+  private String activity;
+
   // Constructors
   public User(
       int userId,
@@ -45,7 +48,8 @@ public class User {
       int age,
       String sex,
       double height,
-      double weight) {
+      double weight,
+      String activity) {
     this.userId = userId;
     this.userName = userName;
     this.userEmail = userEmail;
@@ -54,6 +58,7 @@ public class User {
     this.sex = sex;
     this.height = height;
     this.weight = weight;
+    this.activity = activity ;
   }
 
   // Getter Setters
@@ -93,6 +98,14 @@ public class User {
 
   public int getUserId() {
     return userId;
+  }
+
+  public String getActivity() {
+    return activity;
+  }
+
+  public void setActivity(String activity) {
+    this.activity = activity;
   }
 
   public void setUserId(int userId) {
