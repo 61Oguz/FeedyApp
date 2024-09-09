@@ -50,7 +50,7 @@ const LoginForm = () => {
       </div>
 
       <div className={"login-wrapper"}>
-        <form action="Feedy/src/Pages/Pages/LoginPage/LoginForm.jsx">
+        <form action="../LoginPage/LoginForm.jsx">
           <h1>Login</h1>
           <div className={"input-box"}>
             <input

@@ -102,16 +102,15 @@ body {
 }
 
 .drop-down .p-dropdown-item:hover {
-  background-color: rgba(255, 255, 255, 1);
   color: white;
 }
 
 .drop-down .p-dropdown-panel {
   background-color: #f9f9f9 ;
-  z-index: 1 ;
+
 }
 .register-wrapper .drop-down .p-dropdown-open {
-  background-color: #ed1212;
+  background-color: #e8e7e7;
 
 }
 
@@ -141,7 +140,7 @@ body {
 }
 
 .register-wrapper button {
-  width: 100%;
+  width: 90%;
   height: 45px;
   background: #ffffff;
   border: none;

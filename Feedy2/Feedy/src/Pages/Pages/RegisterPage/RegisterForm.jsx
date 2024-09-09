@@ -4,6 +4,7 @@ import "../../styles/RegisterForm.css";
 import axios from "axios";
 import {useNavigate} from "react-router-dom";
 import {Dropdown} from "primereact/dropdown";
+import {FloatLabel} from 'primereact/floatlabel';
 
 const RegisterForm = () => {
     const navigate = useNavigate();
@@ -14,9 +15,9 @@ const RegisterForm = () => {
     const [height, setHeight] = useState("");
     const [weight, setWeight] = useState("");
     const [sex, setSex] = useState("");
-    const Sexes = ["Male", "Female"];
+    const Sexes = ["Male", "Female", "Female", "Female", "Female", "Female", "Female", "Female", "Female", "Female"];
     const [activityLevel, setActivityLevel] = useState("");
-    const activityLevels = ["1", "2", "3", "4", "5"];
+    const activityLevels = ["1", "2", "3", "4", "5", "2", "3", "4", "5"];
 
 
     async function save(event) {
@@ -51,7 +52,7 @@ const RegisterForm = () => {
                 <img src="../../../../public/FeedyLogo.png" className="logo"/>
             </div>
             <div className={"register-wrapper"}>
-                <form action="Feedy/src/Pages/Pages/RegisterPage/RegisterForm.jsx">
+                <form action="../RegisterPage/RegisterForm.jsx">
                     <h1>Register</h1>
                     <div className={"input-box"}>
                         <input
@@ -87,6 +88,7 @@ const RegisterForm = () => {
                         <FaLock className={"icon1"}/>
                     </div>
                     <div>
+
                         <Dropdown className={"drop-down"}
                                   value={sex}
                                   onChange={(e) => setSex(e.value)}
@@ -96,8 +98,11 @@ const RegisterForm = () => {
                                   checkmark={true}
                                   highlightOnSelect={true}
                                   variant={"filled"}
-                                  style={{  }}
+                                  style={{
+
+                                  }}
                         />
+
                     </div>
 
                     <div className={"input-box"}>
