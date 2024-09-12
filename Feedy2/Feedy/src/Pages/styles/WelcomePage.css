@@ -18,7 +18,7 @@ body {
 }
 
 .chart-container {
-  margin-top: 540px;
+  margin-top: 510px;
   margin-left: -484px;
   margin-bottom: -5px;
   display: flex;
@@ -41,8 +41,8 @@ body {
 .completion-rate {
   position: fixed;
   text-align: center;
-  top: 3.5rem;
-  left: 48rem;
+  top: 3.9rem;
+  left: 57rem;
   align-items: center;
 }
 
@@ -59,8 +59,9 @@ body {
   width: 100%;
   display: flex;
   align-items: center;
-  margin-top: 40px;
+  margin-top: 5px;
   justify-content: center;
+  margin-left: -30px;
 }
 
 
@@ -68,13 +69,13 @@ body {
   text-align: center;
   align-items: center;
   position: fixed;
-  top: 110px;
-  left: 380px;
+  top: 130px;
+  left: 500px;
 }
 
 
 .content-box {
-  top: 130px ;
+  top: 160px ;
   position: fixed;
   left: 58% ;
   display: flex;
@@ -96,6 +97,7 @@ body {
   height: 315px;
   text-align: center;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
 }
 
 .user-feedback-box h3, .user-feedback-box h4 {

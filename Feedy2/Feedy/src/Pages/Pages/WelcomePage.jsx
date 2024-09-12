@@ -89,8 +89,8 @@ const WelcomePage = () => {
                 <WelcomeWeeklyBarGraph calorieData={calorieData} dailyCalorieNeed={dailyCalorieNeed}/>
             </div>
             <div className="completion-rate">
-                <h3>Welcome, {user.userName}!</h3>
-                <h4>Calorie Completion Rate: {completionRate}%</h4>
+                <h3>Welcome to Feedy, {user.userName}!</h3>
+
             </div>
         </div>
     );

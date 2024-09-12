@@ -4,7 +4,7 @@ import "../../styles/RegisterForm.css";
 import axios from "axios";
 import {useNavigate} from "react-router-dom";
 import {Dropdown} from "primereact/dropdown";
-import {FloatLabel} from 'primereact/floatlabel';
+
 
 const RegisterForm = () => {
     const navigate = useNavigate();
@@ -15,9 +15,9 @@ const RegisterForm = () => {
     const [height, setHeight] = useState("");
     const [weight, setWeight] = useState("");
     const [sex, setSex] = useState("");
-    const Sexes = ["Male", "Female", "Female", "Female", "Female", "Female", "Female", "Female", "Female", "Female"];
+    const Sexes = ["Male", "Female"];
     const [activityLevel, setActivityLevel] = useState("");
-    const activityLevels = ["1", "2", "3", "4", "5", "2", "3", "4", "5"];
+    const activityLevels = ["1", "2", "3", "4", "5"];
 
 
     async function save(event) {

@@ -61,6 +61,10 @@ const DefaultSideBar = ({user, logout, onToggle}) => {
                         FoodLog
                     </button>
 
+                    <button className="sidebar-buttons" onClick={() => navigate("/education")}>
+                        Info
+                    </button>
+
                     <button className="sidebar-buttons" onClick={logout}>
                         Logout
                     </button>

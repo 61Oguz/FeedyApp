@@ -306,7 +306,7 @@ const FoodLogPage = () => {
                     plugins={[DoughnutCenterTextPlugin]}
                     styles={{
                         mainContent: {marginLeft: '300px'},
-                        calChartWrapper: {marginTop: '710px', marginLeft: '185px'},
+                        calChartWrapper: {marginTop: '650px', marginLeft: '265px'},
                         completionGraphs: {display: 'flex', justifyContent: 'space-between', width: '100%'},
                         donutHeader: {visibility: 'hidden'},
                         completionGraphs1: {width: '185px', visibility: 'hidden'},

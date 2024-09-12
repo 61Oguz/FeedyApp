@@ -17,7 +17,7 @@ const Header = ({user, logout, isSidebarOpen}) => {
                 <div className="header-right">
           <span className="user-name">
             {user
-                ? `Welcome, ${capitalizeFirstLetter(user.userName.split(" ")[0])}!`
+                ? `Hey, ${capitalizeFirstLetter(user.userName.split(" ")[0])}!`
                 : "Loading..."}
           </span>
                     <button className="logout-button" onClick={logout}>
