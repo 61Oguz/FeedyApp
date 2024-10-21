@@ -29,3 +29,37 @@ profile-button {
   border-radius: 4px;
   cursor: pointer;
 }
+.profile-wrapper .input-box input:focus {
+  border-color: #007bff; /* Default focus border */
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); /* Default focus glow */
+}
+
+.highlighted {
+  border-color: #28a745 !important; /* Green border for highlighted field */
+  box-shadow: 0 0 5px rgba(40, 167, 69, 0.5); /* Green glow */
+}
+
+button[disabled] {
+  background-color: #6c757d;
+  cursor: not-allowed;
+}
+
+button {
+  padding: 10px 20px;
+  font-size: 16px;
+  color: #fff;
+  background-color: #007bff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+.profile-wrapper .input-box label {
+  display: block;
+  font-size: 16px;
+  color: white; /* Set label color */
+}

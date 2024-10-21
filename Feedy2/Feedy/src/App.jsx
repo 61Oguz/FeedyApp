@@ -1,5 +1,5 @@
 import "./Pages/styles/LoginForm.css";
-import {BrowserRouter as Router, Routes, Route} from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 import LoginForm from "./Pages/Pages/LoginPage/LoginForm.jsx";
 import RegisterForm from "./Pages/Pages/RegisterPage/RegisterForm.jsx";
@@ -10,19 +10,21 @@ import FoodSuggestionPage from "./Pages/Pages/FoodSuggestionPage.jsx";
 import EducationPage from "./Pages/Pages/EducationPage.jsx";
 
 function App() {
-    return (<div>
-            <Router>
-                <Routes>
-                    <Route path="/" element={<LoginForm/>}/>
-                    <Route path="/register" element={<RegisterForm/>}/>
-                    <Route path="/welcome" element={<WelcomePage/>}/>
-                    <Route path="/profile" element={<ProfilePage/>}/>
-                    <Route path="/foodlog" element={<FoodLogPage/>}/>
-                    <Route path="/education" element={<EducationPage/>}/>
-                    <Route path="/foodsuggestions" element={<FoodSuggestionPage/>}/>
-                </Routes>
-            </Router>
-        </div>);
+  return (
+    <div>
+      <Router>
+        <Routes>
+          <Route path="/" element={<LoginForm />} />
+          <Route path="/register" element={<RegisterForm />} />
+          <Route path="/welcome" element={<WelcomePage />} />
+          <Route path="/profile" element={<ProfilePage />} />
+          <Route path="/foodlog" element={<FoodLogPage />} />
+          <Route path="/education" element={<EducationPage />} />
+          <Route path="/foodsuggestions" element={<FoodSuggestionPage />} />
+        </Routes>
+      </Router>
+    </div>
+  );
 }
 
 export default App;

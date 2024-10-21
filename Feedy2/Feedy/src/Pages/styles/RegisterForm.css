@@ -2,6 +2,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: sans-serif;
 }
 
 body {
@@ -13,28 +14,30 @@ body {
   background: #78f4b5;
   font-family: -apple-system, serif;
   font-size: 16px;
+  overflow: auto;
 }
 
 .register-wrapper {
   width: 480px;
   background: rgba(1, 40, 33, 0.73);
   border: 5px solid rgba(255, 255, 255, 0.2);
-  backdrop-filter: blur(30px);
   box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
   color: white;
   border-radius: 10px;
-  padding: 30px 40px;
+  padding: 8px 40px;
   text-align: center;
   position: relative;
-  margin-top: -30px;
+  margin-top: -50px;
   margin-left: 50px;
+  overflow: auto;
 }
 
 .logo-container {
   position: center;
-  padding: 30px 0; /* Adjust padding for smaller screens */
+  padding: 20px 0; /* Adjust padding for smaller screens */
   text-align: center;
-  margin-top: -190px;
+  margin-top: -175px;
+  margin-left: 60px;
 }
 
 .logo {
@@ -51,67 +54,6 @@ body {
   width: 100%;
   height: 50px;
   margin: 20px 0; /* Adjust margin for smaller screens */
-}
-
-.drop-down {
-  position: relative;
-  width: calc(100% - 40px); /* Adjust input width for icon */
-  height: 50px;
-  outline: none;
-  border: 2px solid rgba(255, 255, 255, 0.2);
-  border-radius: 40px;
-  font-size: 16px;
-  padding: 10px 13px 16px 40px; /* Adjust padding for smaller screens */
-  box-sizing: border-box; /* Ensure padding and border are included in width */
-
-  z-index: 1;
-}
-.drop-down .p-dropdown {
-  width: 100%;
-  height: 50px;
-  background: white;
-  outline: none;
-  border: 2px solid rgba(255, 255, 255, 0.2);
-  border-radius: 40px;
-  font-size: 16px;
-  color: white;
-  padding: 10px 20px;
-  box-sizing: border-box;
-  margin: 20px 0;
-  align-items: center;
-  display: flex;
-  z-index: 1;
-  position: relative;
-  overflow: visible;
-}
-
-.drop-down .p-dropdown-label {
-  color: rgb(255, 255, 255); /* Color for the placeholder */
-  align-items: start;
-  text-align: left ;
-  padding: 2px;
-  font-size: 17px;
-
-}
-
-.drop-down .p-dropdown-items {
-  color: #ffffff;
-  background-color: rgba(255, 255, 255, 0.9);
-  z-index: 1;
-
-}
-
-.drop-down .p-dropdown-item:hover {
-  color: white;
-}
-
-.drop-down .p-dropdown-panel {
-  background-color: #f9f9f9 ;
-
-}
-.register-wrapper .drop-down .p-dropdown-open {
-  background-color: #e8e7e7;
-
 }
 
 .input-box input {
@@ -170,13 +112,83 @@ body {
   text-decoration: underline;
 }
 
+.react-select__control {
+  background-color: transparent !important;
+  border: 2px solid rgba(255, 255, 255, 0.2) !important;
+  border-radius: 40px !important;
+  box-shadow: none !important;
+  padding: 5px 10px;
+  width: 90.1%;
+  margin-left: 20px;
+  font-size: 16px;
+}
+
+.react-select__single-value {
+  color: #fff !important;
+  text-align: start;
+  padding: 5px 20px;
+}
+
+.react-select__placeholder {
+  color: #fff !important;
+  text-align: left;
+  padding: 5px 20px;
+}
+
+.react-select__menu {
+  background-color: rgba(1, 40, 33, 0.73) !important;
+  width: 85% !important;
+  margin-left: 8%;
+}
+
+.react-select__dropdown-indicator {
+  color: #fff !important;
+}
+
+.react-select__indicator-separator {
+  background-color: transparent !important;
+}
+
+.react-select__option--is-focused {
+  background-color: #ffffff !important; /* Change the highlight color */
+  color: #000 !important; /* Change the text color for better contrast */
+}
+
 /* Media Query for smaller screens */
 @media (max-width: 600px) {
-  .wrapper {
-    padding: 20px;
+  body {
+    transform: scale(0.85); /* Scale down the entire app */
+    transform-origin: top left; /* Make sure the scaling starts from the top left */
+    width: 100%; /* Ensure the body width stays 100% */
+  }
+
+  .register-wrapper {
+    padding: 15px 20px; /* Reduce padding for smaller screens */
+  }
+
+  .logo {
+    width: 100px; /* Further reduce logo size */
+  }
+
+  .register-wrapper h1 {
+    font-size: 22px; /* Reduce heading size */
   }
 
   .input-box input {
-    padding: 15px 15px 15px 40px;
+    padding: 15px 15px 15px 40px; /* Adjust padding */
+    height: 45px; /* Reduce input height */
+  }
+
+  .react-select__control {
+    height: 45px !important; /* Match select height with input */
+  }
+
+  .register-wrapper button {
+    height: 40px; /* Reduce button height */
+    font-size: 14px; /* Adjust button text size */
+  }
+
+  .register-wrapper .register-link {
+    font-size: 14px; /* Adjust link text size */
   }
 }

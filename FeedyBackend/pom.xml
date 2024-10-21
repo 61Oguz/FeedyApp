@@ -12,7 +12,7 @@
 	<artifactId>FeedyBackend</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>FeedyBackend</name>
-	<description>FeedyBackend </description>
+	<description>FeedyBackend </description>‚
 	<properties>
 		<java.version>17</java.version>
 	</properties>

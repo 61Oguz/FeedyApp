@@ -54,5 +54,7 @@
   z-index: 0;
   backdrop-filter: blur(0px);
   left: 50px; /* Adjust this based on the sidebar width when closed */
-  width: calc(100% - 50px); /* Ensure the header spans the entire width minus sidebar width when closed */
+  width: calc(
+    100% - 50px
+  ); /* Ensure the header spans the entire width minus sidebar width when closed */
 }

@@ -17,4 +17,6 @@ public interface UserService {
     LoginResponse loginUser(LoginDTO loginDTO);
 
     UserDTO getUserById(int id);
+
+    UserDTO updateUser(int id, UserDTO userDTO);
 }

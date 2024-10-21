@@ -1,5 +1,4 @@
 body {
-  overflow: hidden;
 }
 .welcome-container {
   display: flex;
@@ -30,10 +29,11 @@ body {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-gap: 30px;
-  margin-left: -320px
+  margin-left: -320px;
 }
 
-.line-chart, .bar-chart {
+.line-chart,
+.bar-chart {
   width: 100%;
   max-width: 600px;
 }
@@ -45,8 +45,6 @@ body {
   left: 57rem;
   align-items: center;
 }
-
-
 
 .Welcome-Completion-Graphs1,
 .Welcome-Completion-Graphs2,
@@ -64,8 +62,7 @@ body {
   margin-left: -30px;
 }
 
-
-.Donut-Header{
+.Donut-Header {
   text-align: center;
   align-items: center;
   position: fixed;
@@ -73,11 +70,25 @@ body {
   left: 500px;
 }
 
+.content-wrapper {
+  display: flex;
+  flex-direction: column;
+  transition: margin-left 0.3s ease;
+  margin-left: 200px;
+}
+
+.content-wrapper.sidebar-closed {
+  margin-left: 70px;
+}
+
+.content-box, .user-feedback-box {
+  transition: margin-left 0.3s ease;
+}
 
 .content-box {
-  top: 160px ;
+  top: 160px;
   position: fixed;
-  left: 58% ;
+  left: 58%;
   display: flex;
   align-items: center;
   background-color: #75eab0;
@@ -87,20 +98,26 @@ body {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   margin-bottom: 20px;
 }
+
 .user-feedback-box {
   background-color: #f9f9f9;
   border: 1px solid #ddd;
   border-radius: 8px;
   padding: 20px;
-  margin: 20px;
   width: 410px;
   height: 315px;
   text-align: center;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-
 }
 
-.user-feedback-box h3, .user-feedback-box h4 {
+/* When sidebar is closed, shift the content-box and user-feedback-box left */
+.main-content.sidebar-closed .content-wrapper {
+  margin-left: 70px;
+  position: relative;
+}
+
+.user-feedback-box h3,
+.user-feedback-box h4 {
   margin-bottom: 10px;
 }
 
@@ -108,4 +125,92 @@ body {
   margin: 5px 0;
 }
 
+.pdf-download-button {
+  background-color: #4caf50;
+  color: white;
+  padding: 10px 20px;
+  margin: 650px 0px 0;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  width: 50%;
+  height: 45px;
+}
 
+.login-wrapper button {
+  width: 50%;
+  height: 45px;
+  background: #ffffff;
+  border: none;
+  outline: none;
+  border-radius: 40px;
+  box-shadow: 0 0 10px rgb(0, 0, 0, 0.1);
+  cursor: pointer;
+  font-size: 16px;
+  color: #333;
+  font-weight: 700;
+  align-items: center;
+  text-align: center;
+}
+
+.pdf-download-button:hover {
+  background-color: #45a049;
+}
+
+@media (max-width: 768px) {
+  .welcome-container {
+    flex-direction: column;
+    overflow-y: scroll;
+  }
+
+  .main-content {
+    margin-left: 0;
+    padding: 10px;
+  }
+
+  .chart-container {
+    flex-direction: column;
+  }
+
+  .completion-rate {
+    left: 50%;
+    top: auto;
+    bottom: 20px;
+    transform: translateX(-50%);
+  }
+
+  .content-box {
+    width: 100%;
+    left: 0;
+    top: auto;
+    position: relative;
+    margin: 10px 0;
+    padding: 15px;
+    visibility: hidden;
+  }
+
+  .Welcome-Completion-Graphs {
+    grid-template-columns: 1fr;
+    margin-left: 0;
+    margin-top: -420px;
+    width: 80%;
+  }
+
+  .line-chart,
+  .bar-chart {
+    width: 10%;
+    max-width: 10%;
+  }
+
+  .user-feedback-box {
+    visibility: hidden;
+  }
+
+  .Donut-Header {
+    position: relative;
+    left: auto;
+    top: auto;
+    visibility: hidden;
+  }
+}

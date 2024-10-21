@@ -12,15 +12,6 @@
   margin-top: -30px;
   margin-left: 50px;
 }
-.logo-container {
-  margin-top: -411px;
-  padding: 30px 50px;
-  text-align: center;
-  margin-left: 50px;
-}
-.logo {
-  width: 155px;
-}
 .login-wrapper h1 {
   font-size: 30px;
   text-align: center;
@@ -63,7 +54,6 @@
   transform: translateY(-50%) translateX(-15px);
   font-size: 26px;
   color: black;
-
 }
 
 .login-wrapper button {

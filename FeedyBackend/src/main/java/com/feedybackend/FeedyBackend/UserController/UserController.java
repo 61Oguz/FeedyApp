@@ -38,6 +38,12 @@ public class UserController {
     return ResponseEntity.ok(loginResponse);
   }
 
+  @PutMapping("/{id}")
+  public ResponseEntity<?> updateUser(@PathVariable int id, @RequestBody UserDTO userDTO) {
+    UserDTO updatedUser = userService.updateUser(id, userDTO);
+    return ResponseEntity.ok(updatedUser);
+  }
+
 
   @GetMapping("/{id}")
   public ResponseEntity<?> getUserById(@PathVariable int id) {

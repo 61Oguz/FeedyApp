@@ -1,5 +1,7 @@
 package com.feedybackend.FeedyBackend.DTO;
 
+import com.feedybackend.FeedyBackend.Entity.User;
+
 import javax.validation.constraints.NotNull;
 
 public class UserDTO {
@@ -47,7 +49,19 @@ public class UserDTO {
 
   public UserDTO() {}
 
-  // Getter Setters
+  public UserDTO(User user) {
+    this.userId = user.getUserId();
+    this.userName = user.getUserName();
+    this.userEmail = user.getUserEmail();
+    this.userPassword = user.getUserPassword();
+    this.age = user.getAge();
+    this.sex = user.getSex();
+    this.height = user.getHeight();
+    this.weight = user.getWeight();
+    this.activity = user.getActivity();
+  }
+
+    // Getter Setters
   public int getAge() {
     return age;
   }
