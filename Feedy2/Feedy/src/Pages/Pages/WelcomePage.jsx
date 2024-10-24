@@ -15,6 +15,7 @@ import UserFeedback from "../Components/WelcomePage/UserFeedback.jsx";
 import html2canvas from "html2canvas";
 import jsPDF from "jspdf";
 
+
 const WelcomePage = () => {
   const { user, handleLogout } = useAuth();
   const dailyCalorieNeed = useMaintenanceCalories(user);
