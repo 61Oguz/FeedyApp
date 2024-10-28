@@ -1,7 +1,6 @@
 package com.feedybackend.FeedyBackend.UserController;
 
 import com.feedybackend.FeedyBackend.DTO.FoodLogDTO;
-import com.feedybackend.FeedyBackend.DTO.UserDTO;
 import com.feedybackend.FeedyBackend.Service.FoodLogService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -29,10 +28,21 @@ public class FoodLogController {
         return ResponseEntity.ok(foodLogs);
     }
 
+    @PutMapping("/update/{id}")  // Use log ID for updating
+    public ResponseEntity<?> updateFoodLog(@PathVariable int id, @RequestBody FoodLogDTO foodLogDTO) {
+        foodLogService.updateFoodLog(id, foodLogDTO);  // Update the log with the given ID
+        return ResponseEntity.ok("Food log updated successfully");
+    }
+
     @GetMapping("/lastsevendays/{userId}")
     public ResponseEntity<List<FoodLogDTO>> getLastSevenDaysFoodLogs(@PathVariable int userId) {
         List<FoodLogDTO> foodLogs = foodLogService.getLastSevenDaysFoodLogs(userId);
         return ResponseEntity.ok(foodLogs);
     }
 
+    @DeleteMapping("/{id}")  // Use log ID for deleting
+    public ResponseEntity<?> deleteFoodLog(@PathVariable int id) {
+        foodLogService.deleteFoodLog(id);  // Delete the log with the given ID
+        return ResponseEntity.ok("Food log deleted successfully");
+    }
 }

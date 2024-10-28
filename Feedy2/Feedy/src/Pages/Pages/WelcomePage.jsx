@@ -1,4 +1,4 @@
-import React, {useState, useEffect, useRef} from "react";
+import React, { useState, useEffect, useRef } from "react";
 import axios from "axios";
 import "../styles/WelcomePage.css";
 import "../styles/SideBar.css";
@@ -14,7 +14,8 @@ import useConsumptionData from "../../Hooks/useConsumptionData.jsx";
 import UserFeedback from "../Components/WelcomePage/UserFeedback.jsx";
 import html2canvas from "html2canvas";
 import jsPDF from "jspdf";
-
+import MealModal from "../Components/GeneralComponents/MealModal.jsx"
+import {healthyFoods} from "../../assets/HealthyMeals.js";
 
 const WelcomePage = () => {
   const { user, handleLogout } = useAuth();
@@ -25,6 +26,10 @@ const WelcomePage = () => {
   const { todayConsumption, yesterdayConsumption } = useConsumptionData(
     user?.userId,
   );
+  const [meals, setMeals] = useState([]);
+  const [isModalOpen, setModalOpen] = useState(false);
+
+
 
   const lineGraphRef = useRef(null);
   const barGraphRef = useRef(null);
@@ -90,51 +95,117 @@ const WelcomePage = () => {
     return <div>Loading...</div>;
   }
 
+  const generateRandomMeals = () => {
+    // Split daily calories among meals
+    const breakfastCalories = Math.round(dailyCalorieNeed * 0.25);
+    const lunchCalories = Math.round(dailyCalorieNeed * 0.35);
+    const dinnerCalories = Math.round(dailyCalorieNeed * 0.30);
+    const snackCalories = Math.round(dailyCalorieNeed * 0.10);
+
+    // Function to randomly pick foods from a specific category to match meal calories
+    const generateMeal = (targetCalories, category) => {
+      const meal = [];
+      let totalCalories = 0;
+
+      while (totalCalories < targetCalories - 100) { // Allow a 100 kcal margin
+        // Randomly pick a food from the category
+        const randomFood = healthyFoods[category][Math.floor(Math.random() * healthyFoods[category].length)];
+
+        // Check if adding this food will exceed the target calories by more than 100 kcal
+        if (totalCalories + randomFood.calories <= targetCalories + 100) {
+          meal.push(randomFood);
+          totalCalories += randomFood.calories;
+        } else {
+          break; // Exit if adding the food exceeds the flexible limit
+        }
+      }
+
+      // Log the total calories for each meal (useful for debugging)
+      console.log(`${category} - Total Calories: ${totalCalories}`);
+      return meal;
+    };
+
+    // Generate meals for breakfast, lunch, dinner, and snacks
+    const breakfast = generateMeal(breakfastCalories, 'breakfast');
+    const lunch = generateMeal(lunchCalories, 'lunch');
+    const dinner = generateMeal(dinnerCalories, 'dinner');
+    const snacks = generateMeal(snackCalories, 'snacks');
+
+    // Combine meals and set the state
+    setMeals([
+      { name: 'Breakfast', items: breakfast },
+      { name: 'Lunch', items: lunch },
+      { name: 'Dinner', items: dinner },
+      { name: 'Snacks', items: snacks },
+    ]);
+
+    setModalOpen(true); // Open the modal with the generated meals
+  };
+
+
+  const closeModal = () => setModalOpen(false);
   return (
-      <div className="welcome-container">
-        <Header logout={handleLogout} user={user} isSidebarOpen={isSidebarOpen} />
-        <DefaultSideBar
-            user={user}
-            logout={handleLogout}
-            onToggle={handleSidebarToggle}
-        />
-        <div className={`main-content ${isSidebarOpen ? "" : "sidebar-closed"}`}>
-          <div className={`content-wrapper ${isSidebarOpen ? "" : "sidebar-closed"}`}>
-            <div className="content-box">
-              <UserFeedback
-                  todayConsumption={todayConsumption}
-                  yesterdayConsumption={yesterdayConsumption}
-                  dailyCalorieNeed={dailyCalorieNeed}
-              />
-            </div>
-          </div>
-          <WelcomeCompletionGraphs
+    <div className="welcome-container">
+      <Header logout={handleLogout} user={user} isSidebarOpen={isSidebarOpen} />
+      <DefaultSideBar
+        user={user}
+        logout={handleLogout}
+        onToggle={handleSidebarToggle}
+      />
+      <div className={`main-content ${isSidebarOpen ? "" : "sidebar-closed"}`}>
+        <div
+          className={`content-wrapper ${isSidebarOpen ? "" : "sidebar-closed"}`}
+        >
+          <div className="content-box">
+            <UserFeedback
+              todayConsumption={todayConsumption}
+              yesterdayConsumption={yesterdayConsumption}
               dailyCalorieNeed={dailyCalorieNeed}
-              consumptionData={yesterdayConsumption}
+            />
+          </div>
+        </div>
+        <WelcomeCompletionGraphs
+          dailyCalorieNeed={dailyCalorieNeed}
+          consumptionData={yesterdayConsumption}
+        />
+      </div>
+      <div className="chart-container">
+        <div ref={lineGraphRef}>
+          <WelcomeWeeklyLineGraph
+            calorieData={calorieData}
+            dailyCalorieNeed={dailyCalorieNeed}
           />
         </div>
-        <div className="chart-container">
-          <div ref={lineGraphRef}>
-            <WelcomeWeeklyLineGraph
-                calorieData={calorieData}
-                dailyCalorieNeed={dailyCalorieNeed}
-            />
-          </div>
-          <div ref={barGraphRef}>
-            <WelcomeWeeklyBarGraph
-                calorieData={calorieData}
-                dailyCalorieNeed={dailyCalorieNeed}
-            />
-          </div>
+        <div ref={barGraphRef}>
+          <WelcomeWeeklyBarGraph
+            calorieData={calorieData}
+            dailyCalorieNeed={dailyCalorieNeed}
+          />
         </div>
-        <div className="completion-rate">
-          <h3>Welcome to Feedy, {user.userName}!</h3>
-        </div>
-        {/* Add the button for PDF download */}
-        <button onClick={handleDownloadPDF} className="pdf-download-button">
-          PDF
-        </button>
       </div>
+      <div className="completion-rate">
+        <h3>Welcome to Feedy, {user.userName}!</h3>
+      </div>
+
+
+      <button onClick={generateRandomMeals} className="meal-plan-button">
+        Generate Meal Plan
+      </button>
+      {/* Add the button for PDF download */}
+      <button onClick={handleDownloadPDF} className="pdf-download-button">
+        PDF
+      </button>
+
+
+
+      {/* Modal for showing the meal list */}
+      <MealModal
+          isOpen={isModalOpen}
+          onClose={closeModal}
+          meals={meals}
+          dailyCalorieNeed={dailyCalorieNeed}
+      />
+    </div>
   );
 };
 

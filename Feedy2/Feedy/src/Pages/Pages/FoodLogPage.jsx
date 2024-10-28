@@ -135,10 +135,37 @@ const FoodLogPage = () => {
         portionSize: portionSize,
       });
       alert("Food log saved successfully!");
-      fetchFoodLogs();
-      fetchDatesConsumption(); // Update the consumption after adding a new log
+      await fetchFoodLogs(); // Ensure fetch is awaited
+      await fetchDatesConsumption(); // Ensure this is updated too
     } catch (error) {
       console.error("Error saving food log:", error);
+    }
+  };
+
+  const handlePortionChange = async (log, change) => {
+    const newPortionSize = log.portionSize + change;
+    if (newPortionSize < 1) return; // Prevent portion size from going below 1
+
+    try {
+      await axios.put(`http://localhost:8080/api/foodlog/update`, {
+        ...log,
+        portionSize: newPortionSize,
+      });
+      await fetchFoodLogs(); // Refresh the food logs after update
+      await fetchDatesConsumption(); // Update total values and graph after update
+    } catch (error) {
+      console.error("Error updating portion size:", error);
+    }
+  };
+
+  const handleDeleteLog = async (id) => {
+    console.log("Deleting log with id:", id); // Add this to log the id
+    try {
+      await axios.delete(`http://localhost:8080/api/foodlog/${id}`);
+      setFoodLogs((prevLogs) => prevLogs.filter((log) => log.id !== id)); // Remove deleted log from state
+      await fetchDatesConsumption();
+    } catch (error) {
+      console.error("Error deleting food log:", error);
     }
   };
 
@@ -327,20 +354,29 @@ const FoodLogPage = () => {
         <div>
           <h3 className={"nutrition-labels"}>Food Logs for {date}</h3>
           <ul>
-            {foodLogs.map((log) => (
-              <li key={log.foodId}>
+            {foodLogs.map((log, index) => (
+              <li key={`${log.foodId}-${index}`} className="list-item">
                 {log.foodName} - {log.calories} calories - {log.protein}g
                 protein - {log.fat}g fat - {log.carbs}g carbs -{" "}
                 {log.portionSize}x portion
+                <button
+                  className="delete-btn"
+                  onClick={() => handleDeleteLog(log.id)}
+                >
+                  Delete
+                </button>
               </li>
             ))}
           </ul>
-          <h4 className={"nutrition-labels"}>
+
+          <h4 className={"nutrition-labels1"}>
             Total Calories: {totalCalories}
           </h4>
-          <h4 className={"nutrition-labels"}>Total Protein: {totalProtein}g</h4>
-          <h4 className={"nutrition-labels"}>Total Fat: {totalFat}g</h4>
-          <h4 className={"nutrition-labels"}>Total Carbs: {totalCarbs}g</h4>
+          <h4 className={"nutrition-labels1"}>
+            Total Protein: {totalProtein}g
+          </h4>
+          <h4 className={"nutrition-labels1"}>Total Fat: {totalFat}g</h4>
+          <h4 className={"nutrition-labels1"}>Total Carbs: {totalCarbs}g</h4>
         </div>
         <div id={"pieChart"} className={"PieChartWrapper"}>
           <Pie data={pieData} options={pieOptions} />

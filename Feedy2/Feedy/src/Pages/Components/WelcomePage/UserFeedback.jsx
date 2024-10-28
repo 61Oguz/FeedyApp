@@ -19,7 +19,6 @@ const UserFeedback = ({
   };
 
   return (
-
     <div className="user-feedback-box">
       <h3>Yesterday's Values</h3>
       <p>Calories: {yesterdayConsumption.calories} kcal</p>
@@ -29,7 +28,6 @@ const UserFeedback = ({
       <h4>Feedback</h4>
       <p>{calculateFeedback()}</p>
     </div>
-
   );
 };
 

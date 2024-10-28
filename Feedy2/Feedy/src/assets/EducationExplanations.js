@@ -48,9 +48,17 @@ const fatD = `Fats, or lipids, are another crucial nutrient. They are made up of
               in fast food and sweets). Just make sure to have more of the good
               ones for a healthier body!`;
 
+const calD = `A calorie is a way to measure energy. 
+                It's like the fuel your body uses to do everything from 
+                playing to thinking! When you eat food, your body gets calories from it, 
+        which gives you the energy to move, grow, and stay healthy. If you eat more
+ calories than your body needs, it stores the extra as fat. If you don’t get 
+ enough, your body uses up its energy stores to keep you going. So, calories 
+ help your body stay powered up, just like gas in a car!`;
+
 function EducationExplanations(props) {
-  return null;
+    return null;
 }
 
-export { fatD, carbD, protD };
+export {fatD, carbD, protD, calD};
 export default EducationExplanations;

@@ -1,9 +1,7 @@
 package com.feedybackend.FeedyBackend.Service.impl;
 
 import com.feedybackend.FeedyBackend.DTO.FoodLogDTO;
-import com.feedybackend.FeedyBackend.DTO.UserDTO;
 import com.feedybackend.FeedyBackend.Entity.FoodLog;
-import com.feedybackend.FeedyBackend.Entity.User;
 import com.feedybackend.FeedyBackend.Repo.FoodLogRepo;
 import com.feedybackend.FeedyBackend.Service.FoodLogService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,6 +22,7 @@ public class FoodLogServiceImpl implements FoodLogService {
     @Override
     public void saveFoodLog(FoodLogDTO foodLogDTO) {
         FoodLog foodLog = new FoodLog();
+    foodLog.setId(foodLog.getId());
         foodLog.setUserId(foodLogDTO.getUserId());
         foodLog.setFoodName(foodLogDTO.getFoodName());
         foodLog.setDate(foodLogDTO.getDate());
@@ -43,6 +42,7 @@ public class FoodLogServiceImpl implements FoodLogService {
         List<FoodLog> foodLogs = foodLogRepo.findByUserIdAndDate(userId, date);
         return foodLogs.stream()
                 .map(foodLog -> new FoodLogDTO(
+                        foodLog.getId(),
                         foodLog.getUserId(),
                         foodLog.getFoodName(),
                         foodLog.getDate(),
@@ -68,6 +68,7 @@ public class FoodLogServiceImpl implements FoodLogService {
         List<FoodLog> foodLogs = foodLogRepo.findByUserIdAndDateBetween(userId, formatter.format(sevenDaysAgo), formatter.format(today));
         return foodLogs.stream()
                 .map(foodLog -> new FoodLogDTO(
+                        foodLog.getId(),
                         foodLog.getUserId(),
                         foodLog.getFoodName(),
                         foodLog.getDate(),
@@ -79,6 +80,21 @@ public class FoodLogServiceImpl implements FoodLogService {
                         foodLog.getPortionSize(),
                         foodLog.getPortionType()))
                 .collect(Collectors.toList());
+    }
+
+    @Override
+    public void updateFoodLog(int id, FoodLogDTO foodLogDTO) {
+        FoodLog foodLog = foodLogRepo.findById(id).orElseThrow(() -> new RuntimeException("Log not found"));
+        // Update the food log fields...
+        foodLogRepo.save(foodLog);
+    }
+
+    @Override
+    public void deleteFoodLog(int id) {
+        if (!foodLogRepo.existsById(id)) {
+            throw new RuntimeException("Log with ID " + id + " does not exist");
+        }
+        foodLogRepo.deleteById(id);
     }
 }
 

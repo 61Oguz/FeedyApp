@@ -7,8 +7,12 @@ import jakarta.persistence.*;
 public class FoodLog {
 
     @Id
+    @Column(name = "id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private int id;  // Unique ID for each food log entry
+
+    @Column(name = "food_id")
+    private int foodId;
 
     @Column(name = "user_id")
     private int userId;
@@ -22,8 +26,6 @@ public class FoodLog {
     @Column(name = "calories")
     private double calories;
 
-    @Column(name = "food_id")
-    private int foodId;
 
     @Column(name = "protein")
     private double protein;
@@ -73,7 +75,7 @@ public class FoodLog {
     }
 
     public int getId() {
-        return id;
+        return id; // Use this unique ID for operations like delete and update
     }
 
     public double getProtein() {

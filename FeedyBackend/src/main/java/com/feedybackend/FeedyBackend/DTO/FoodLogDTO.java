@@ -1,6 +1,10 @@
 package com.feedybackend.FeedyBackend.DTO;
 
 public class FoodLogDTO {
+    private int id ;
+
+
+
     private int userId;
     private String foodName;
     private String date;
@@ -15,7 +19,8 @@ public class FoodLogDTO {
     // Constructors, getters, and setters
     public FoodLogDTO() {}
 
-    public FoodLogDTO(int userId, String foodName, String date, double calories, int foodId, double protein, double fat, double carbs, double portionSize, String portionType) {
+    public FoodLogDTO(int id , int userId, String foodName, String date, double calories, int foodId, double protein, double fat, double carbs, double portionSize, String portionType) {
+      this.id = id;
         this.userId = userId;
         this.foodName = foodName;
         this.date = date;
@@ -28,6 +33,13 @@ public class FoodLogDTO {
         this.portionType = portionType; // Initialize portion type
     }
 
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
 
     public int getUserId() {
         return userId;

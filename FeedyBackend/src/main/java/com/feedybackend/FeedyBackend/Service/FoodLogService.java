@@ -10,4 +10,7 @@ public interface FoodLogService {
     List<FoodLogDTO> getLastSevenDaysFoodLogs(int userId);
 
 
+    void updateFoodLog(int id,FoodLogDTO foodLogDTO);
+
+    void deleteFoodLog(int id);
 }
