@@ -184,7 +184,6 @@ const WelcomePage = () => {
         </div>
       </div>
       <div className="completion-rate">
-        <h3>Welcome to Feedy, {user.userName}!</h3>
       </div>
 
 

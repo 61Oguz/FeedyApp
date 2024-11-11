@@ -93,9 +93,10 @@
 /* Responsive Adjustments */
 @media (max-width: 768px) {
     .modal-content {
-        width: 90%;
-        max-width: 100%;
-        padding: 15px;
+        width: 100%;
+        max-width: 120%;
+        margin-left:0px;
+        right: 70px;
     }
 
     .meal-section h3 {
@@ -104,5 +105,16 @@
 
     .meal-section li {
         font-size: 14px;
+    }
+
+    .modal-overlay {
+        top: -70px;
+        left: 0;
+        right: -70px;
+        bottom: -70px;
+        background-color: rgba(0, 0, 0, 0.5);
+        justify-content: center;
+        align-items: center;
+        z-index: 999; /* Ensure it is on top */
     }
 }

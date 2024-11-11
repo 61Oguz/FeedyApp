@@ -61,7 +61,7 @@
   position: fixed; /* Fixed position */
   top: 480px; /* Aligns with the TodoWrapper */
   left: 60%; /* Adjust as necessary to position it near the TodoWrapper */
-  margin-top: -65px;
+  margin-top: -80px;
   margin-left: 0;
 
   box-shadow: 1px 0px 3px 3px rgba(9, 82, 67, 0.73);
@@ -70,8 +70,8 @@
 
 .download-button {
   position: fixed;
-  top: 790px;
-  right: 150px;
+  top: 650px;
+  right: 100px;
   background: rgba(1, 40, 33, 0.73);
   color: rgb(255, 255, 255);
 
@@ -207,4 +207,72 @@
 
 .delete-btn {
   background-color: #f10505;
+}
+
+.Welcome-Completion-GraphsFoodLog {
+  margin-top: 37px;
+
+
+}
+
+@media (max-width: 768px) {
+
+  .Welcome-Completion-GraphsFoodLog {
+    visibility: hidden ;
+  }
+  .TodoWrapper {
+    background-color: rgba(9, 82, 67, 0.73);
+    border-radius: 10px;
+    width: 295px; /* Adjust as necessary */
+    position: fixed; /* Change to fixed */
+    top: 10px; /* Adjust top position */
+    left: 40%;
+    box-shadow: 0 0 10px rgba(1, 10, 10, 0.1);
+    font-family: Georgia;
+    font-weight: normal;
+    z-index: 3;
+
+
+  }
+  .DoughnutChartWrapper {
+    visibility: hidden ;
+  }
+  .PieChartWrapper {
+    visibility: hidden ;
+  }
+  .searchInput {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 100%;
+    box-sizing: border-box;
+    font-size: 16px;
+    box-shadow: 1px 0px 3px 3px rgba(9, 82, 67, 0.73);
+  }
+  .download-button {
+    visibility:hidden ;
+  }
+
+  .input-date{
+    position: fixed;
+    top:140px;
+    left:140px;
+    margin-bottom:20px;
+
+
+  }
+  .nutrition-labels1 {
+
+  }
+
+  .nutrition-labels {
+    margin-top:50px;
+  }
+
+  .suggestion-item {
+    padding: 5px;
+    cursor: pointer;
+    z-index: 99;
+  }
+
 }

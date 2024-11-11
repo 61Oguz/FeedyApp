@@ -47,6 +47,34 @@
   font-weight: 700;
   margin-top: 20px; /* Adjust margin for smaller screens */
   margin-left: 0;
+}.sidebar-buttons2 {
+  width: 100%;
+  height: 45px;
+  background: #ffffff;
+  border: #000000;
+  outline: none;
+  border-radius: 18px;
+  box-shadow: 0 0 10px rgb(0, 0, 0, 0.1);
+  cursor: pointer;
+  font-size: 16px;
+  color: #333;
+  font-weight: 700;
+  margin-top: 20px; /* Adjust margin for smaller screens */
+  margin-left: 0;
+}.sidebar-buttons3 {
+  width: 100%;
+  height: 45px;
+  background: #ffffff;
+  border: #000000;
+  outline: none;
+  border-radius: 18px;
+  box-shadow: 0 0 10px rgb(0, 0, 0, 0.1);
+  cursor: pointer;
+  font-size: 16px;
+  color: #333;
+  font-weight: 700;
+  margin-top: 20px; /* Adjust margin for smaller screens */
+  margin-left: 0;
 }
 
 .sideBar-info {
@@ -84,8 +112,48 @@
 }
 
 @media (max-width: 768px) {
-  .sidebar {
-    width: 100px;
-    height: 100vh;
+  .body{
+
   }
+
+  .sidebar {
+    top: -60px;
+    width: 128px;
+    height: 1923vh; /* Full height of viewport */
+  }
+
+  .toggle-sidebar-btn {
+    visibility: hidden;
+  }
+
+  .sidebar-buttons2{
+    visibility: hidden;
+  }
+  .sidebar-buttons3{
+    position :fixed;
+    margin-top: 20px;
+    margin-left: -110px;
+    width : 28%;
+    visibility: hidden;
+  }
+  .sidebar.open {
+    top: -60px;
+    height: 1923vh;
+    width: 143px; /* Width when sidebar is open */
+    transition: width 0.6s ease;
+  }
+
+  .sidebar-logo-container {
+    width: 0rem;
+    margin-top: -100px;
+    margin-bottom: -80px;
+    padding: 10px 50px;
+    margin-left: -148px;
+    cursor: pointer;
+  }
+
+  .sidebar-logo {
+    width: 305px; /* Adjust the size of the logo */
+  }
+
 }

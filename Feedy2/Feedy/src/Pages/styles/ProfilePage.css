@@ -63,3 +63,27 @@ button:hover {
   font-size: 16px;
   color: white; /* Set label color */
 }
+
+@media (max-width: 768px) {
+  .profile-wrapper {
+    width: 290px;
+    background: rgba(1, 40, 33, 0.73);
+    border: 5px solid rgba(255, 255, 255, 0.2);
+
+    color: white;
+    border-radius: 10px;
+    padding: 30px 40px;
+    text-align: center;
+    position: relative;
+    margin-top: -37px;
+    margin-left: 225px;
+  }
+  .profile-wrapper .input-box input:focus {
+    border-color: #007bff; /* Default focus border */
+  }
+  .highlighted {
+    border-color: #28a745 !important; /* Green border for highlighted field */
+
+  }
+
+}

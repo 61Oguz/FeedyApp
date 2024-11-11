@@ -5,8 +5,11 @@ import DefaultSideBar from "../Components/GeneralComponents/DefaultSideBar.jsx";
 import Header from "../Components/GeneralComponents/Header.jsx";
 import useAuth from "../../Hooks/useAuth.jsx";
 import "../styles/ProfilePage.css";
+import "../styles/Header.css";
+import useSidebar from "../../Hooks/useSidebar.jsx";
 
 const ProfilePage = () => {
+  const { isSidebarOpen, handleSidebarToggle } = useSidebar();
   const { user, handleLogout, refreshUserData } = useAuth(); // Import user and refreshUserData
   const [formData, setFormData] = useState({
     userName: "",
@@ -95,7 +98,7 @@ const ProfilePage = () => {
 
   return (
     <div>
-      <Header logout={handleLogout} user={user} />
+      <Header logout={handleLogout} user={user} isSidebarOpen={isSidebarOpen}/>
       <DefaultSideBar user={user} logout={handleLogout} />
 
       <div className="profile-wrapper">

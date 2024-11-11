@@ -306,17 +306,18 @@ const FoodLogPage = () => {
 
   return (
     <div>
-      <div className={`TodoWrapper ${isSidebarOpen ? "" : "sidebar-closed"}`}>
-        <DefaultSideBar
+      <DefaultSideBar
           user={user}
           logout={handleLogout}
           onToggle={handleSidebarToggle}
-        />
-        <Header
+      />
+      <Header
           logout={handleLogout}
           user={user}
           isSidebarOpen={isSidebarOpen}
-        />
+      />
+      <div className={`TodoWrapper ${isSidebarOpen ? "" : "sidebar-closed"}`}>
+
         <form onSubmit={handleSubmit}>
           <Autosuggest
             suggestions={suggestions}
@@ -340,7 +341,7 @@ const FoodLogPage = () => {
             required
             style={{ marginBottom: 20, height: 30 }}
           />
-          <input
+          <input className={"input-date"}
             type="date"
             value={date}
             onChange={(e) => setDate(e.target.value)}
@@ -389,7 +390,7 @@ const FoodLogPage = () => {
           />
         </div>
       </div>
-      <div>
+      <div className={"Welcome-Completion-GraphsFoodLog"}>
         <WelcomeCompletionGraphs
           dailyCalorieNeed={dailyCalorieNeed}
           consumptionData={datesConsumption}

@@ -85,13 +85,13 @@ const DefaultSideBar = ({ user, logout, onToggle }) => {
           </button>
 
           <button
-            className="sidebar-buttons"
+            className="sidebar-buttons2"
             onClick={() => navigate("/education")}
           >
             Info
           </button>
 
-          <button className="sidebar-buttons" onClick={logout}>
+          <button className="sidebar-buttons3" onClick={logout}>
             Logout
           </button>
         </div>

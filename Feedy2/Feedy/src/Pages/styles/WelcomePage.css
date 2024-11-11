@@ -1,5 +1,6 @@
+/* Default layout settings for desktop */
 body {
-  overflow: hidden; /* This disables scrolling */
+  overflow: hidden; /* Disables scrolling */
 }
 .welcome-container {
   display: flex;
@@ -19,7 +20,7 @@ body {
 
 .chart-container {
   margin-top: 510px;
-  margin-left: -484px;
+  margin-left: -494px;
   margin-bottom: -5px;
   display: flex;
   flex-direction: row;
@@ -34,10 +35,12 @@ body {
   box-shadow: 0px 0px 0px 0px rgba(9, 82, 67, 0.73);
 }
 
+
 .line-chart,
 .bar-chart {
   width: 100%;
   max-width: 600px;
+  z-index : 3 ;
 }
 
 .completion-rate {
@@ -46,7 +49,6 @@ body {
   top: 3.9rem;
   left: 57rem;
   align-items: center;
-
 }
 
 .Welcome-Completion-Graphs1,
@@ -55,8 +57,6 @@ body {
 .Welcome-Completion-Graphs4 {
   width: 185px;
   box-shadow: 0px 0px 3px 0px rgb(50, 94, 74);
-
-
 }
 
 .Welcome-CalChartWrapper {
@@ -66,15 +66,14 @@ body {
   margin-top: 5px;
   justify-content: center;
   margin-left: -30px;
-
 }
 
 .Donut-Header {
   text-align: center;
   align-items: center;
   position: fixed;
-  top: 90px;
-  left: 380px;
+  top: 70px;
+  left: 320px;
 }
 
 .content-wrapper {
@@ -82,6 +81,7 @@ body {
   flex-direction: column;
   transition: margin-left 0.3s ease;
   margin-left: 200px;
+
 }
 
 .content-wrapper.sidebar-closed {
@@ -89,12 +89,12 @@ body {
 }
 
 .content-box,
-.user-feedback-box {
+.user-feedback-box.sidebar-closed {
   transition: margin-left 0.3s ease;
 }
 
 .content-box {
-  top: 160px;
+  top: 90px;
   position: fixed;
   left: 58%;
   display: flex;
@@ -146,7 +146,8 @@ body {
   height: 40px;
   position : fixed ;
   top:100px;
-  left:1500px;
+  left:1490px;
+
 }
 
 .meal-plan-button{
@@ -157,11 +158,11 @@ body {
   border-radius: 5px;
   cursor: pointer;
   font-size: 15px;
-  width: 90px;
+  width: 120px;
   height: 95px;
   position : fixed;
   top:-500px;
-  left:1500px;
+  left:1440px;
 }
 
 .login-wrapper button {
@@ -186,63 +187,116 @@ body {
   background-color: #45a049;
 }
 
+/* Responsive adjustments */
 @media (max-width: 768px) {
+  body {
+    overflow-y: auto; /* Enable scrolling on smaller screens */
+    overflow-x: hidden;
+    height: 50%;
+  }
+
   .welcome-container {
     flex-direction: column;
-    overflow-y: scroll;
+    overflow-y: auto;
+    height: 50%;
   }
 
-  .main-content {
-    margin-left: 0;
+  .main-content,
+  .content-wrapper,
+  .chart-container,
+  .completion-rate,
+  .user-feedback-box {
+    margin: 0;
     padding: 10px;
-  }
-
-  .chart-container {
-    flex-direction: column;
-    box-shadow: 1px 0px 3px 3px rgba(9, 82, 67, 0.73);
-  }
-
-  .completion-rate {
-    left: 50%;
-    top: auto;
-    bottom: 20px;
-    transform: translateX(-50%);
-  }
-
-  .content-box {
-    width: 100%;
-    left: 0;
-    top: auto;
+    width: 100%; /* Slightly smaller width for better fit */
+    max-width: 100%; /* Constrain to screen width */
     position: relative;
-    margin: 10px 0;
-    padding: 15px;
-    visibility: hidden;
+    left: auto;
+    top: auto;
+    height: 50%;
+
+  }
+  .content-box{
+    margin: 0;
+    padding: 10px;
+    position: relative;
+    left: auto;
+    top: auto;
+    width: 50% !important; /* Slightly smaller width for better fit */
+    height: 50%;
+
+  }
+  .
+
+  .chart-container,
+  .content-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 50%;
   }
 
   .Welcome-Completion-Graphs {
     grid-template-columns: 1fr;
-    margin-left: 120px;
-    margin-top: -420px;
-    width: 80%;
+    margin: -20px auto;
+    padding: -20px;
+
+    width: 40%;
     background-color: rgba(30, 255, 211, 0.27);
     border-radius: 2px;
     box-shadow: 0px 0px 3px 3px rgba(30, 255, 211, 0.7);
+    margin-left: -200px;
+    height: 800px;
   }
 
   .line-chart,
   .bar-chart {
-    width: 10%;
-    max-width: 10%;
+    width: 90%; /* Reduced size */
+    max-width: 100%;
   }
 
-  .user-feedback-box {
-    visibility: hidden;
-  }
-
+  .completion-rate,
   .Donut-Header {
-    position: relative;
-    left: auto;
-    top: auto;
-    visibility: hidden;
+    text-align: center;
+    width: 100%;
+    margin: 0 auto;
+    position: static;
+
+  }
+
+  .content-box,
+  .user-feedback-box {
+    width: 90%;
+    padding: 0px;
+    font-size: 0.9em; /* Slightly smaller font size */
+    position: center;
+  }
+
+  .meal-plan-button {
+    width: 40%; /* Reduced size for mobile */
+    height: auto;
+    position: static;
+    margin-left: 290px;
+    font-size: 0.9em; /* Smaller button text */
+    padding: 8px 16px;
+    margin-top: -60px;
+    z-index : 3 ;
+  }
+
+  /* Adjust font sizes and padding for all components */
+  .Welcome-Completion-Graphs1,
+  .Welcome-Completion-Graphs2,
+  .Welcome-Completion-Graphs3,
+  .Welcome-Completion-Graphs4,
+  .content-box,
+  .user-feedback-box,
+  .completion-rate h3 {
+    font-size: 0.85em;
+    padding: 10px;
+  }
+
+  .pdf-download-button:hover,
+  .meal-plan-button:hover {
+    background-color: #45a049;
   }
 }

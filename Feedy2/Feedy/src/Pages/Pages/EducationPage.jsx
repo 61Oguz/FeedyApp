@@ -5,14 +5,15 @@ import useAuth from "../../Hooks/useAuth.jsx";
 import "../styles/EducationPage.css";
 import CanvasJSReact from "@canvasjs/react-charts";
 
+
 import educationExplanations, {
     carbD,
     protD,
     fatD,
-    calD
+    calD, nutD
 } from "../../assets/EducationExplanations.js";
 import {quizQuestions} from "../../assets/quizData.js";
-
+import {how1, how2, how3,how4,how5,how6} from "../../assets/HowToAnswers.js";
 
 
 const EducationPage = () => {
@@ -26,6 +27,14 @@ const EducationPage = () => {
     const [userAnswers, setUserAnswers] = useState({});
     const [isQuizComplete, setIsQuizComplete] = useState(false);
     const [score, setScore] = useState(0);
+
+    const [showHow1, setShowHow1] = useState(false);
+    const [showHow2, setShowHow2] = useState(false);
+    const [showHow3, setShowHow3] = useState(false);
+    const [showHow4, setShowHow4] = useState(false);
+    const [showHow5, setShowHow5] = useState(false);
+    const [showHow6, setShowHow6] = useState(false);
+    const [pyr, setPyr] = useState(false);
 
     const {user, handleLogout} = useAuth();
     if (!user) {
@@ -41,6 +50,13 @@ const EducationPage = () => {
         setShowCarbs(false);
         setShowFats(false);
         setShowCalories(false);
+        setShowHow1(false);
+        setShowHow2(false);
+        setShowHow3(false);
+        setShowHow4(false);
+        setShowHow5(false);
+        setShowHow6(false);
+        setPyr(false);
     };
 
     const handleClickOutsideModal = (e) => {
@@ -131,7 +147,7 @@ const EducationPage = () => {
         <div className={showQuiz ? "blurred-background" : ""}>
             <DefaultSideBar user={user} logout={handleLogout}/>
             <Header logout={handleLogout} user={user}/>
-
+            <h1 className={"info-Header"}>Welcome to the Information Page!</h1>
             <div>
                 {showWarning && (
                     <div
@@ -155,7 +171,7 @@ const EducationPage = () => {
 
             {/* Quiz Trigger */}
             <div>
-                <button className={"edu-button"} onClick={() => setShowQuiz(true)}>
+                <button className={"quiz-start-button "} onClick={() => setShowQuiz(true)}>
                     Take the Nutrition Quiz
                 </button>
             </div>
@@ -213,96 +229,67 @@ const EducationPage = () => {
                 </div>
             )}
 
-            {/* Modal triggers */}
-            <div className={"content-box-what"}>
-                <div className={"pop-up"}>
-                    <h2 style={{marginLeft: "110px"}}>What is ?</h2>
-                    <button className={"edu-button"} onClick={() => setShowProtein(true)}>
-                        Protein
-                    </button>
-                    <button className={"edu-button"} onClick={() => setShowCarbs(true)}>
-                        Carbs
-                    </button>
-                    <button className={"edu-button"} onClick={() => setShowFats(true)}>
-                        Fats
-                    </button>
-                    <button
-                        className={"edu-button"}
-                        onClick={() => setShowCalories(true)}
-                    >
-                        Calories
-                    </button>
-                </div>
+            {/* Circular Menu */}
+            {/* Circular Menu */}
+            <div className="circle-menu">
+                <div className="menu-item top-left" onClick={() => setShowFats(true)}>Fats</div>
+                <div className="menu-item top-right" onClick={() => setShowCarbs(true)}>Carbs</div>
+                <div className="menu-item bottom-left" onClick={() => setShowCalories(true)}>Calories</div>
+                <div className="menu-item bottom-right" onClick={() => setShowProtein(true)}>Proteins</div>
+                <div className="center-label">What is?</div>
             </div>
+
 
             {/* How to Section */}
             <div className={"content-box-how"}>
-                <div className={"pop-up2"}>
                     <h2 style={{marginLeft: "130px"}}>How ?</h2>
                     <button
                         className={"edu-button2"}
-                        onClick={() => setShowProtein(true)}
+                        onClick={() => setShowHow1(true)}
                     >
-                        Protein
+                        to determine the daily calorie need?
                     </button>
-                    <button className={"edu-button2"} onClick={() => setShowCarbs(true)}>
-                        Carbs
+                    <button className={"edu-button2"} onClick={() => setShowHow1(true)}>
+                        to determine the daily macronutrients need?
+
                     </button>
-                    <button className={"edu-button2"} onClick={() => setShowFats(true)}>
-                        Fats
+                    <button className={"edu-button2"} onClick={() => setShowHow2(true)}>
+                        does our body uses calories and macronutrients?
                     </button>
-                    <button
-                        className={"edu-button2"}
-                        onClick={() => setShowCalories(true)}
-                    >
-                        Calories
+                    <button className={"edu-button2"} onClick={() => setShowHow3(true)}>
+                        is the relationship between macros and calories?
                     </button>
-                    <button
-                        className={"edu-button2"}
-                        onClick={() => setShowCalories(true)}
-                    >
-                        Calories
+
+                    <button className={"edu-button2"} onClick={() => setShowHow4(true)}>
+                        can we identify healthy portions for different foods?
                     </button>
-                    <button
-                        className={"edu-button2"}
-                        onClick={() => setShowCalories(true)}
-                    >
-                        Calories
+                    <button className={"edu-button2"} onClick={() => setShowHow5(true)}>
+                        can we make healthier choices when eating out or choosing snacks?
                     </button>
-                    <button
-                        className={"edu-button2"}
-                        onClick={() => setShowCalories(true)}
-                    >
-                        Calories
+                    <button className={"edu-button2"} onClick={() => setShowHow6(true)}>
+                        can we follow a healthy diet ?
                     </button>
-                    <button
-                        className={"edu-button2"}
-                        onClick={() => setShowCalories(true)}
-                    >
-                        Calories
-                    </button>
-                </div>
             </div>
 
             <div className={"content-box-links"}>
-                <div className={"pop-up3"}>
+
                     <h2 style={{marginLeft: "110px"}}>Usefull Links</h2>
                     <button className={"edu-button"} onClick={() => setShowProtein(true)}>
-                        Protein
+                        MyPlate for Kids
                     </button>
                     <button className={"edu-button"} onClick={() => setShowCarbs(true)}>
-                        Carbs
+                        Kid’s Healthy Eating Plate
                     </button>
                     <button className={"edu-button"} onClick={() => setShowFats(true)}>
-                        Fats
+                        MyPlate for Teens
                     </button>
                     <button
                         className={"edu-button"}
                         onClick={() => setShowCalories(true)}
                     >
-                        Calories
+                        Healthy Eating for Teens
                     </button>
-                </div>
+
             </div>
 
             {/* Modal for Protein */}
@@ -366,6 +353,65 @@ const EducationPage = () => {
                 </div>
             )}
 
+            {showHow1 && (
+                <div className="modal-container" onClick={handleClickOutsideModal}>
+                    <div className="modal-window1">
+                        <h3 className={"modal-headers"}>How to determine the daily calorie need? </h3>
+                        <p style={{textAlign: "start"}}>{how1}</p>
+                        <button onClick={handleCloseModal}>Close</button>
+                    </div>
+                </div>
+            )}  {showHow2 && (
+                <div className="modal-container" onClick={handleClickOutsideModal}>
+                    <div className="modal-window1">
+                        <h3 className={"modal-headers"}>How can we determine daily macronutrient needs? </h3>
+                        <p style={{textAlign: "start"}}>{how2}</p>
+                        <button onClick={handleCloseModal}>Close</button>
+                    </div>
+                </div>
+            )}  {showHow3 && (
+                <div className="modal-container" onClick={handleClickOutsideModal}>
+                    <div className="modal-window1">
+                        <h3 className={"modal-headers"}>How does our body use calories and macronutrients? </h3>
+                        <p style={{textAlign: "start"}}>{how3}</p>
+                        <button onClick={handleCloseModal}>Close</button>
+                    </div>
+                </div>
+            )}  {showHow4 && (
+                <div className="modal-container" onClick={handleClickOutsideModal}>
+                    <div className="modal-window1">
+                        <h3 className={"modal-headers"}>What is the relationship between macros and calories? </h3>
+                        <p style={{textAlign: "start"}}>{how4}</p>
+                        <button onClick={handleCloseModal}>Close</button>
+                    </div>
+                </div>
+            )}  {showHow5 && (
+                <div className="modal-container" onClick={handleClickOutsideModal}>
+                    <div className="modal-window1">
+                        <h3 className={"modal-headers"}>How can we identify healthy portions for different foods? </h3>
+                        <p style={{textAlign: "start"}}>{how5}</p>
+                        <button onClick={handleCloseModal}>Close</button>
+                    </div>
+                </div>
+            )}  {showHow6 && (
+                <div className="modal-container" onClick={handleClickOutsideModal}>
+                    <div className="modal-window1">
+                        <h3 className={"modal-headers"}>How can we make healthier choices when eating out or choosing snacks?</h3>
+                        <p style={{textAlign: "start"}}>{how6}</p>
+                        <button onClick={handleCloseModal}>Close</button>
+                    </div>
+                </div>
+            )}
+            {pyr && (
+                <div className="modal-container" onClick={handleClickOutsideModal}>
+                    <div className="modal-window1">
+                        <h3 className={"modal-headers"}>Nutrition Pyramid</h3>
+                        <p style={{textAlign: "start"}}>{nutD}</p>
+                        <button onClick={handleCloseModal}>Close</button>
+                    </div>
+                </div>
+            )}
+
             <div className={"content-box-pyramid "}>
                 {/* Nutrition Pyramid */}
                 <div className={"pyramid"}>
@@ -376,7 +422,7 @@ const EducationPage = () => {
                 </div>
                 <button
                     className={"pyramid-button"}
-                    onClick={() => setShowCalories(true)}
+                    onClick={() => setPyr(true)}
                 >
                     What is this Pyramid here ?
                 </button>

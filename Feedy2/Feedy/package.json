@@ -14,6 +14,7 @@
   "dependencies": {
     "@canvasjs/react-charts": "^1.0.2",
     "@heroicons/react": "^2.1.4",
+    "@itwin/itwinui-react": "^3.15.5",
     "@material-tailwind/react": "^2.1.9",
     "@mui/material": "^5.15.20",
     "@mui/x-charts": "^7.11.1",
