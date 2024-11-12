@@ -11,10 +11,10 @@ const WelcomeWeeklyLineGraph = ({ calorieData, dailyCalorieNeed }) => {
         data: calorieData.map((log) => log.calories),
         fill: false,
         tension: 0.1,
-        borderWidth: 4, // Thicker line
-        pointRadius: 6, // Larger points
-        borderColor: "rgb(6,35,35)", // Border color for bars
-        pointColor : "rgb(117,234,176)", // Border color for bars
+        borderWidth: 4,
+        pointRadius: 6,
+        borderColor: "rgb(6,35,35)",
+        pointColor: "rgb(117,234,176)",
       },
     ],
   };
@@ -25,19 +25,21 @@ const WelcomeWeeklyLineGraph = ({ calorieData, dailyCalorieNeed }) => {
         display: true,
         text: "Calorie Intakes of the Last Seven Days",
         font: {
-          size: 20, // Larger title font
-          weight: 'bold', // Bold title
+          size: 20,
+          weight: "bold",
         },
       },
       tooltip: {
         callbacks: {
           label: function (context) {
-            const percentage = ((context.raw / dailyCalorieNeed) * 100).toFixed(2);
+            const percentage = ((context.raw / dailyCalorieNeed) * 100).toFixed(
+              2,
+            );
             return `${context.raw} calories (${percentage}%)`;
           },
         },
         bodyFont: {
-          weight: 'bold', // Bold text in tooltip
+          weight: "bold",
         },
       },
     },
@@ -45,13 +47,13 @@ const WelcomeWeeklyLineGraph = ({ calorieData, dailyCalorieNeed }) => {
       x: {
         ticks: {
           font: {
-            size: 12, // Larger font size for x-axis labels
-            weight: 'bold', // Make x-axis labels bold
+            size: 12,
+            weight: "bold",
           },
-          color: '#000', // Black color for x-axis labels
+          color: "#000",
         },
         grid: {
-          color: 'rgba(12,12,12,0.29)', // Grid line color for y-axis
+          color: "rgba(12,12,12,0.29)",
         },
       },
       y: {
@@ -59,23 +61,23 @@ const WelcomeWeeklyLineGraph = ({ calorieData, dailyCalorieNeed }) => {
         max: dailyCalorieNeed,
         ticks: {
           font: {
-            size: 12, // Larger font size for y-axis labels
-            weight: 'bold', // Make y-axis labels bold
+            size: 12,
+            weight: "bold",
           },
-          color: '#000', // Black color for y-axis labels
+          color: "#000",
         },
         grid: {
-          color: 'rgba(12,12,12,0.29)', // Grid line color for y-axis
+          color: "rgba(12,12,12,0.29)",
         },
       },
     },
     elements: {
       line: {
-        borderWidth: 1, // Thicker line width
+        borderWidth: 1,
       },
       point: {
-        radius: 1, // Larger points
-        backgroundColor: 'rgb(117,234,176)', // Color for points
+        radius: 1,
+        backgroundColor: "rgb(117,234,176)",
       },
     },
   };

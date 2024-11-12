@@ -1,6 +1,5 @@
-/* Default layout settings for desktop */
 body {
-  overflow: hidden; /* Disables scrolling */
+  overflow: hidden;
 }
 .welcome-container {
   display: flex;
@@ -35,12 +34,11 @@ body {
   box-shadow: 0px 0px 0px 0px rgba(9, 82, 67, 0.73);
 }
 
-
 .line-chart,
 .bar-chart {
   width: 100%;
   max-width: 600px;
-  z-index : 3 ;
+  z-index: 3;
 }
 
 .completion-rate {
@@ -81,7 +79,6 @@ body {
   flex-direction: column;
   transition: margin-left 0.3s ease;
   margin-left: 200px;
-
 }
 
 .content-wrapper.sidebar-closed {
@@ -118,7 +115,6 @@ body {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-/* When sidebar is closed, shift the content-box and user-feedback-box left */
 .main-content.sidebar-closed .content-wrapper {
   margin-left: 70px;
   position: relative;
@@ -144,13 +140,12 @@ body {
   font-size: 16px;
   width: 70px;
   height: 40px;
-  position : fixed ;
-  top:100px;
-  left:1490px;
-
+  position: fixed;
+  top: 100px;
+  left: 1490px;
 }
 
-.meal-plan-button{
+.meal-plan-button {
   background-color: rgba(9, 82, 67, 0.73);
   color: white;
   margin: 650px 0px 0;
@@ -160,9 +155,9 @@ body {
   font-size: 15px;
   width: 120px;
   height: 95px;
-  position : fixed;
-  top:-500px;
-  left:1440px;
+  position: fixed;
+  top: -500px;
+  left: 1440px;
 }
 
 .login-wrapper button {
@@ -183,14 +178,14 @@ body {
 
 .pdf-download-button:hover {
   background-color: #45a049;
-}.meal-plan-button:hover {
+}
+.meal-plan-button:hover {
   background-color: #45a049;
 }
 
-/* Responsive adjustments */
 @media (max-width: 768px) {
   body {
-    overflow-y: auto; /* Enable scrolling on smaller screens */
+    overflow-y: auto;
     overflow-x: hidden;
     height: 50%;
   }
@@ -208,27 +203,23 @@ body {
   .user-feedback-box {
     margin: 0;
     padding: 10px;
-    width: 100%; /* Slightly smaller width for better fit */
-    max-width: 100%; /* Constrain to screen width */
+    width: 100%;
+    max-width: 100%;
     position: relative;
     left: auto;
     top: auto;
     height: 50%;
-
   }
-  .content-box{
+  .content-box {
     margin: 0;
     padding: 10px;
     position: relative;
     left: auto;
     top: auto;
-    width: 50% !important; /* Slightly smaller width for better fit */
+    width: 50% !important;
     height: 50%;
-
   }
-  .
-
-  .chart-container,
+  . .chart-container,
   .content-wrapper {
     display: flex;
     flex-direction: column;
@@ -251,7 +242,7 @@ body {
 
   .line-chart,
   .bar-chart {
-    width: 90%; /* Reduced size */
+    width: 90%;
     max-width: 100%;
   }
 
@@ -261,29 +252,27 @@ body {
     width: 100%;
     margin: 0 auto;
     position: static;
-
   }
 
   .content-box,
   .user-feedback-box {
     width: 90%;
     padding: 0px;
-    font-size: 0.9em; /* Slightly smaller font size */
+    font-size: 0.9em;
     position: center;
   }
 
   .meal-plan-button {
-    width: 40%; /* Reduced size for mobile */
+    width: 40%;
     height: auto;
     position: static;
     margin-left: 290px;
-    font-size: 0.9em; /* Smaller button text */
+    font-size: 0.9em;
     padding: 8px 16px;
     margin-top: -60px;
-    z-index : 3 ;
+    z-index: 3;
   }
 
-  /* Adjust font sizes and padding for all components */
   .Welcome-Completion-Graphs1,
   .Welcome-Completion-Graphs2,
   .Welcome-Completion-Graphs3,

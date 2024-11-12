@@ -56,11 +56,11 @@ const calD = `A calorie is a way to measure energy.
  enough, your body uses up its energy stores to keep you going. So, calories 
  help your body stay powered up, just like gas in a car!`;
 
-const nutD = `this will be added`
+const nutD = `this will be added`;
 
 function EducationExplanations(props) {
-    return null;
+  return null;
 }
 
-export {fatD, carbD, protD, calD,nutD};
+export { fatD, carbD, protD, calD, nutD };
 export default EducationExplanations;

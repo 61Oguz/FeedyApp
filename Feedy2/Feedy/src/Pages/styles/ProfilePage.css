@@ -17,7 +17,7 @@
   position: relative;
   width: 100%;
   height: 50px;
-  margin: 20px 0; /* Adjust margin for smaller screens */
+  margin: 20px 0;
 }
 
 profile-button {
@@ -30,13 +30,13 @@ profile-button {
   cursor: pointer;
 }
 .profile-wrapper .input-box input:focus {
-  border-color: #007bff; /* Default focus border */
-  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); /* Default focus glow */
+  border-color: #007bff;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
 }
 
 .highlighted {
-  border-color: #28a745 !important; /* Green border for highlighted field */
-  box-shadow: 0 0 5px rgba(40, 167, 69, 0.5); /* Green glow */
+  border-color: #28a745 !important;
+  box-shadow: 0 0 5px rgba(40, 167, 69, 0.5);
 }
 
 button[disabled] {
@@ -61,7 +61,7 @@ button:hover {
 .profile-wrapper .input-box label {
   display: block;
   font-size: 16px;
-  color: white; /* Set label color */
+  color: white;
 }
 
 @media (max-width: 768px) {
@@ -79,11 +79,9 @@ button:hover {
     margin-left: 225px;
   }
   .profile-wrapper .input-box input:focus {
-    border-color: #007bff; /* Default focus border */
+    border-color: #007bff;
   }
   .highlighted {
-    border-color: #28a745 !important; /* Green border for highlighted field */
-
+    border-color: #28a745 !important;
   }
-
 }

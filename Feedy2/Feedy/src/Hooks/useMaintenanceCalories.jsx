@@ -12,7 +12,7 @@ const useMaintenanceCalories = (user) => {
 
   const calculateMaintenanceCalories = (user) => {
     const BMR = 10 * user.weight + 6.25 * user.height - 5 * user.age;
-    const maintenanceCalories = BMR * 1.55; // Assuming moderate activity level
+    const maintenanceCalories = BMR * 1.55;
     return Math.round(maintenanceCalories);
   };
 

@@ -1,120 +1,115 @@
 .modal-overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: rgba(0, 0, 0, 0.5);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 999; /* Ensure it is on top */
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
 }
 
 .modal-content {
-    background-color: #95f1c2;
-    padding: 20px;
-    border-radius: 10px;
-    width: 80%;
-    max-width: 800px;
-    max-height: 100vh; /* Prevent modal from exceeding 80% of viewport height */
-    overflow-y: auto; /* Enable vertical scrolling for overflow content */
-    text-align: start;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  background-color: #95f1c2;
+  padding: 20px;
+  border-radius: 10px;
+  width: 80%;
+  max-width: 800px;
+  max-height: 100vh;
+  overflow-y: auto;
+  text-align: start;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .modal-headers {
-    font-size: 18px;
-    color: #333;
-    margin-bottom: 20px;
+  font-size: 18px;
+  color: #333;
+  margin-bottom: 20px;
 }
 
 .meal-section {
-    margin-bottom: 20px;
-    padding: 15px;
-    background-color: #ffffff;
-    border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+  padding: 15px;
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 .meal-section h3 {
-    font-size: 20px;
-    font-weight: bold;
-    color: rgba(9, 82, 67, 0.73);
-    margin-bottom: 10px;
-    text-align: center;
-    border-bottom: 2px solid #062323;
-    padding-bottom: 5px;
+  font-size: 20px;
+  font-weight: bold;
+  color: rgba(9, 82, 67, 0.73);
+  margin-bottom: 10px;
+  text-align: center;
+  border-bottom: 2px solid #062323;
+  padding-bottom: 5px;
 }
 
 .meal-section ul {
-    list-style-type: disc;
-    padding-left: 20px;
-    color: #555;
+  list-style-type: disc;
+  padding-left: 20px;
+  color: #555;
 }
 
 .meal-section li {
-    margin-bottom: -17px;
-    font-size: 16px;
+  margin-bottom: -17px;
+  font-size: 16px;
 }
 
 .macro-values {
-    font-size: 14px;
-    color: #666;
+  font-size: 14px;
+  color: #666;
 }
 
 .summed-values {
-    margin-top: 20px;
-    font-size: 18px;
-    font-weight: bold;
-    text-align: right;
-    color: #333;
-    border-top: 2px solid #ccc;
-    padding-top: 10px;
+  margin-top: 20px;
+  font-size: 18px;
+  font-weight: bold;
+  text-align: right;
+  color: #333;
+  border-top: 2px solid #ccc;
+  padding-top: 10px;
 }
 
-.pdf-download-button-meal{
-    background-color: rgba(9, 82, 67, 0.73);
-
-}.close-button-meal{
-    background-color: red;
-
-}.pdf-download-button-meal:hover{
-    background-color: rgb(17, 171, 140);
-
-}.close-button-meal:hover{
-    background-color: #ef6767;
-
+.pdf-download-button-meal {
+  background-color: rgba(9, 82, 67, 0.73);
+}
+.close-button-meal {
+  background-color: red;
+}
+.pdf-download-button-meal:hover {
+  background-color: rgb(17, 171, 140);
+}
+.close-button-meal:hover {
+  background-color: #ef6767;
 }
 
-
-
-
-/* Responsive Adjustments */
 @media (max-width: 768px) {
-    .modal-content {
-        width: 100%;
-        max-width: 120%;
-        margin-left:0px;
-        right: 70px;
-    }
+  .modal-content {
+    width: 100%;
+    max-width: 120%;
+    margin-left: 0px;
+    right: 70px;
+  }
 
-    .meal-section h3 {
-        font-size: 18px;
-    }
+  .meal-section h3 {
+    font-size: 18px;
+  }
 
-    .meal-section li {
-        font-size: 14px;
-    }
+  .meal-section li {
+    font-size: 14px;
+  }
 
-    .modal-overlay {
-        top: -70px;
-        left: 0;
-        right: -70px;
-        bottom: -70px;
-        background-color: rgba(0, 0, 0, 0.5);
-        justify-content: center;
-        align-items: center;
-        z-index: 999; /* Ensure it is on top */
-    }
+  .modal-overlay {
+    top: -70px;
+    left: 0;
+    right: -70px;
+    bottom: -70px;
+    background-color: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+    z-index: 999; /* Ensure it is on top */
+  }
 }

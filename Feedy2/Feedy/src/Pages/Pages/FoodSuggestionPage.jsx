@@ -12,10 +12,9 @@ const FoodSuggestionPage = () => {
   const [caloricGoal, setCaloricGoal] = useState(0);
 
   useEffect(() => {
-    // Calculate user's daily caloric goal (example calculation, you may need to adjust it)
     const calculateCaloricGoal = () => {
       const BMR = 10 * user.weight + 6.25 * user.height - 5 * user.age;
-      const maintenanceCalories = BMR * 1.55; // Assuming moderate activity level
+      const maintenanceCalories = BMR * 1.55;
       setCaloricGoal(Math.round(maintenanceCalories));
     };
 

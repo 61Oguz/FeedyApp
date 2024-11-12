@@ -22,11 +22,9 @@ const RegisterForm = () => {
   ];
 
   const activityLevels = [
-    { value: "1", label: "1" },
-    { value: "2", label: "2" },
-    { value: "3", label: "3" },
-    { value: "4", label: "4" },
-    { value: "5", label: "5" },
+    { value: "Just School, No exercise", label: "Just School, No exercise" },
+    { value: "School+ 1-3/Week Exercise", label: "School+ 1-3/Week Exercise" },
+    { value: "School+ 3-5/Week Exercise", label: "School+ 3-5/Week Exercise" },
   ];
 
   async function save(event) {

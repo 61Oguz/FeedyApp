@@ -5,7 +5,7 @@
   border: 1px solid #ddd;
   padding: 30px;
 }
-.info-Header{
+.info-Header {
   position: fixed;
   top: 150px;
   left: 750px;
@@ -22,14 +22,13 @@
   margin: 3px;
   background-color: rgb(227, 105, 94);
   position: fixed;
-  left: 845px ;
-  top:770px;
+  left: 845px;
+  top: 770px;
   width: 320px;
-
 }
 
 .edu-button2 {
-  margin-left : 65px;
+  margin-left: 65px;
   background-color: rgba(1, 40, 33, 0.73);
   display: block; /* Makes buttons stack vertically */
   margin-top: 10px; /* Adds space between buttons */
@@ -39,8 +38,7 @@
   border-radius: 5px;
   cursor: pointer;
   width: 370px;
-  top:10px;
-
+  top: 10px;
 }
 
 .pop-up {
@@ -91,7 +89,7 @@
 
 .content-box-links {
   position: fixed;
-  top:615px;
+  top: 615px;
   left: 270px;
   width: 400px;
   height: 230px;
@@ -135,7 +133,7 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+  background-color: rgba(0, 0, 0, 0.5);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -150,11 +148,11 @@
 }
 
 .tutorial-window-container {
-  backdrop-filter: blur(5px); /* Apply blur effect to the background */
+  backdrop-filter: blur(5px);
 }
 
 .blurred {
-  backdrop-filter: blur(5px); /* Apply blur effect to the background */
+  backdrop-filter: blur(5px);
 }
 
 .modal-container {
@@ -270,20 +268,18 @@
   color: black;
 }
 
-/* Main circular menu container */
 .circle-menu {
   position: relative;
   width: 420px;
   height: 420px;
   border-radius: 50%;
   overflow: hidden;
-  margin-left : 95px;
-  border: 4px solid #333; /* Outline for the entire menu */
+  margin-left: 95px;
+  border: 4px solid #333;
   transition: transform 0.3s ease;
   box-shadow: 1px 0px 13px 13px rgb(117, 234, 213);
 }
 
-/* Each quadrant */
 .menu-item {
   position: absolute;
   width: 50%;
@@ -301,7 +297,6 @@
   filter: brightness(1.2);
 }
 
-/* Position each quadrant */
 .top-left {
   top: 0;
   left: 0;
@@ -324,10 +319,8 @@
   bottom: 0;
   right: 0;
   background-color: #727ef3;
-
 }
 
-/* Center label styling */
 .center-label {
   position: absolute;
   top: 50%;
@@ -348,20 +341,27 @@
   box-shadow: 0px 0px 3px 3px rgba(30, 255, 211, 0.7);
 }
 
-/* Hover effect to give the center label a lift */
 .center-label:hover {
   background-color: #444;
   box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.3);
 }
 
-/* Animations */
 @keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 @keyframes popIn {
-  from { transform: scale(0.9); opacity: 0; }
-  to { transform: scale(1); opacity: 1; }
+  from {
+    transform: scale(0.9);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
 }
-

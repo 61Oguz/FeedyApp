@@ -162,17 +162,11 @@
 }
 
 .list-item:hover {
-  background-color: rgba(
-    30,
-    255,
-    211,
-    0.27
-  ); /* Subtle background change on hover */
-  color: #ffffff; /* Keep text color consistent */
+  background-color: rgba(30, 255, 211, 0.27);
+  color: #ffffff;
   border: 1px solid #28a745;
 }
 
-/* FoodLog.css */
 .suggestions-container {
   max-height: 500px;
   overflow-y: auto;
@@ -211,14 +205,11 @@
 
 .Welcome-Completion-GraphsFoodLog {
   margin-top: 37px;
-
-
 }
 
 @media (max-width: 768px) {
-
   .Welcome-Completion-GraphsFoodLog {
-    visibility: hidden ;
+    visibility: hidden;
   }
   .TodoWrapper {
     background-color: rgba(9, 82, 67, 0.73);
@@ -231,14 +222,12 @@
     font-family: Georgia;
     font-weight: normal;
     z-index: 3;
-
-
   }
   .DoughnutChartWrapper {
-    visibility: hidden ;
+    visibility: hidden;
   }
   .PieChartWrapper {
-    visibility: hidden ;
+    visibility: hidden;
   }
   .searchInput {
     padding: 10px;
@@ -250,23 +239,20 @@
     box-shadow: 1px 0px 3px 3px rgba(9, 82, 67, 0.73);
   }
   .download-button {
-    visibility:hidden ;
+    visibility: hidden;
   }
 
-  .input-date{
+  .input-date {
     position: fixed;
-    top:140px;
-    left:140px;
-    margin-bottom:20px;
-
-
+    top: 140px;
+    left: 140px;
+    margin-bottom: 20px;
   }
   .nutrition-labels1 {
-
   }
 
   .nutrition-labels {
-    margin-top:50px;
+    margin-top: 50px;
   }
 
   .suggestion-item {
@@ -274,5 +260,4 @@
     cursor: pointer;
     z-index: 99;
   }
-
 }

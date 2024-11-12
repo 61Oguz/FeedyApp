@@ -307,17 +307,12 @@ const FoodLogPage = () => {
   return (
     <div>
       <DefaultSideBar
-          user={user}
-          logout={handleLogout}
-          onToggle={handleSidebarToggle}
+        user={user}
+        logout={handleLogout}
+        onToggle={handleSidebarToggle}
       />
-      <Header
-          logout={handleLogout}
-          user={user}
-          isSidebarOpen={isSidebarOpen}
-      />
+      <Header logout={handleLogout} user={user} isSidebarOpen={isSidebarOpen} />
       <div className={`TodoWrapper ${isSidebarOpen ? "" : "sidebar-closed"}`}>
-
         <form onSubmit={handleSubmit}>
           <Autosuggest
             suggestions={suggestions}
@@ -341,7 +336,8 @@ const FoodLogPage = () => {
             required
             style={{ marginBottom: 20, height: 30 }}
           />
-          <input className={"input-date"}
+          <input
+            className={"input-date"}
             type="date"
             value={date}
             onChange={(e) => setDate(e.target.value)}
