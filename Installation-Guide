@@ -1,0 +1,36 @@
+Installation
+The System has been developed using Java, Spring, Maven , JS , JS-React and MySQL.
+In order to run the application locally follow the steps below.
+Prerequisites:
+• -Java Development Kit (JDK 17)
+• -Maven
+• -MySQL (Ensure MySQL is installed and running. Configure a user with credentials
+(adjust them in application.properties)
+• -Node.js and NPM
+Backend Setup:
+1. Clone the Repository
+2. Configure the Database
+1. Ensure MySQL is running on your machine.
+2. Open MySQL and create a database with:
+1 CREATE DATABASE IF NOT EXISTS " name of the database "
+3. Adjust the credentials in the application.properties file if you use a different user-
+name or password.
+Build and Run the Backend:
+1. -Open a terminal in the root directory of the backend application (where pom.xml
+is located).
+2. -Run the following command to build and package the application:
+1 \ textbf { mvn clean install }
+3. -After the build is successful, start the application. The backend server will be
+available at
+1 http : // localhost :8080.
+Frontend Setup:
+1. Navigate to the Frontend Directory
+2. Open a terminal in the frontend project directory (where package.json is located).
+3. Install Dependencies
+4. Run the following command to install the necessary dependencies:
+1 npm install
+5. Run the Development Server
+1 npm run dev
+6. The frontend application will run on the Vite development server, typically acces-
+sible at
+1 http : // localhost :3000.
