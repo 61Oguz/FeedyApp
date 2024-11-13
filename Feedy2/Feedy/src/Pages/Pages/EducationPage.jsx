@@ -280,16 +280,45 @@ const EducationPage = () => {
       </div>
       <div className={"content-box-links"}>
         <h2 style={{ marginLeft: "110px" }}>Usefull Links</h2>
-        <button className={"edu-button"} onClick={() => setShowProtein(true)}>
+        <button
+          className={"edu-button"}
+          onClick={() =>
+            window.open("https://www.myplate.gov/life-stages/kids", "_blank")
+          }
+        >
           MyPlate for Kids
         </button>
-        <button className={"edu-button"} onClick={() => setShowCarbs(true)}>
+        <button
+          className={"edu-button"}
+          onClick={() =>
+            window.open(
+              "https://nutritionsource.hsph.harvard.edu/kids-healthy-eating-plate/",
+              "_blank",
+            )
+          }
+        >
           Kid’s Healthy Eating Plate
         </button>
-        <button className={"edu-button"} onClick={() => setShowFats(true)}>
+        <button
+          className={"edu-button"}
+          onClick={() =>
+            window.open(
+              "https://www.myplate.gov/life-stages/kids Healthy Eating for Teens",
+              "_blank",
+            )
+          }
+        >
           MyPlate for Teens
         </button>
-        <button className={"edu-button"} onClick={() => setShowCalories(true)}>
+        <button
+          className={"edu-button"}
+          onClick={() =>
+            window.open(
+              "https://www.myplate.gov/tip-sheet/healthy-eating-teens",
+              "_blank",
+            )
+          }
+        >
           Healthy Eating for Teens
         </button>
       </div>
@@ -423,12 +452,8 @@ const EducationPage = () => {
         </div>
       )}
       <div className={"content-box-pyramid "}>
-        {/* Nutrition Pyramid */}
         <div className={"pyramid"}>
-          <CanvasJSChart
-            options={options}
-            /*onRef={ref => this.chart = ref}*/
-          />
+          <CanvasJSChart options={options} />
         </div>
         <button className={"pyramid-button"} onClick={() => setPyr(true)}>
           What is this Pyramid here ?

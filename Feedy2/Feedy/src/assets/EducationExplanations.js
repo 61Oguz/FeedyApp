@@ -49,14 +49,16 @@ const fatD = `Fats, or lipids, are another crucial nutrient. They are made up of
               ones for a healthier body!`;
 
 const calD = `A calorie is a way to measure energy. 
-                It's like the fuel your body uses to do everything from 
-                playing to thinking! When you eat food, your body gets calories from it, 
-        which gives you the energy to move, grow, and stay healthy. If you eat more
- calories than your body needs, it stores the extra as fat. If you don’t get 
- enough, your body uses up its energy stores to keep you going. So, calories 
- help your body stay powered up, just like gas in a car!`;
+              It's like the fuel your body uses to do everything from 
+              playing to thinking! When you eat food, your body gets calories from it, 
+              which gives you the energy to move, grow, and stay healthy. If you eat more
+              calories than your body needs, it stores the extra as fat. If you don’t get 
+              enough, your body uses up its energy stores to keep you going. So, calories 
+              help your body stay powered up, just like gas in a car!`;
 
-const nutD = `this will be added`;
+const nutD = `This pyramid represents the importance of nutritional aspects
+              in the overall diet.This means the most important aspect is the calories and the less
+              is the supplements that we take. `;
 
 function EducationExplanations(props) {
   return null;
