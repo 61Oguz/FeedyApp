@@ -10,16 +10,16 @@ body {
 .main-content {
   transition: margin-left 0.3s ease;
   padding: 20px;
-  margin-left: 200px;
+  margin-left: 100px;
 }
 
 .main-content.sidebar-closed {
-  margin-left: 70px;
+  margin-left: 170px;
 }
 
 .chart-container {
   margin-top: 510px;
-  margin-left: -494px;
+  margin-left: -594px;
   margin-bottom: -5px;
   display: flex;
   flex-direction: row;
@@ -30,14 +30,14 @@ body {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-gap: 30px;
-  margin-left: -320px;
+  margin-left: -180px;
   box-shadow: 0px 0px 0px 0px rgba(9, 82, 67, 0.73);
 }
 
 .line-chart,
 .bar-chart {
   width: 100%;
-  max-width: 600px;
+  max-width: 700px;
   z-index: 3;
 }
 
@@ -91,7 +91,7 @@ body {
 }
 
 .content-box {
-  top: 90px;
+  top: 150px;
   position: fixed;
   left: 58%;
   display: flex;
@@ -141,8 +141,8 @@ body {
   width: 70px;
   height: 40px;
   position: fixed;
-  top: 100px;
-  left: 1490px;
+  top: -30px;
+  left: 1600px;
 }
 
 .meal-plan-button {
@@ -156,8 +156,8 @@ body {
   width: 120px;
   height: 95px;
   position: fixed;
-  top: -500px;
-  left: 1440px;
+  top: -480px;
+  left: 1640px;
 }
 
 .login-wrapper button {
@@ -254,13 +254,7 @@ body {
     position: static;
   }
 
-  .content-box,
-  .user-feedback-box {
-    width: 90%;
-    padding: 0px;
-    font-size: 0.9em;
-    position: center;
-  }
+
 
   .meal-plan-button {
     width: 40%;
