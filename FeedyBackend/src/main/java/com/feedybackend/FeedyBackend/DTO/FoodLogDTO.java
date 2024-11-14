@@ -14,7 +14,7 @@ public class FoodLogDTO {
     private double fat;
     private double carbs;
     private double portionSize;
-    private String portionType; // Add portion type
+    private String portionType;
 
     // Constructors, getters, and setters
     public FoodLogDTO() {}

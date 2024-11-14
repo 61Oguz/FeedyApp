@@ -30,10 +30,10 @@
 .edu-button2 {
   margin-left: 65px;
   background-color: rgba(1, 40, 33, 0.73);
-  display: block; /* Makes buttons stack vertically */
-  margin-top: 10px; /* Adds space between buttons */
+  display: block;
+  margin-top: 10px;
   padding: 10px;
-  text-align: left; /* Aligns text to the left */
+  text-align: left;
   border: none;
   border-radius: 5px;
   cursor: pointer;

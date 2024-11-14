@@ -77,14 +77,11 @@ const WelcomePage = () => {
     const pdf = new jsPDF();
     const lineGraphCanvas = await html2canvas(lineGraphRef.current);
     const barGraphCanvas = await html2canvas(barGraphRef.current);
-
     const lineGraphImage = lineGraphCanvas.toDataURL("image/png");
     const barGraphImage = barGraphCanvas.toDataURL("image/png");
-
-    pdf.addImage(lineGraphImage, "PNG", 10, 10, 190, 80); // Adjust position and size
+    pdf.addImage(lineGraphImage, "PNG", 10, 10, 190, 80);
     pdf.addPage(); // Add new page for the next graph
-    pdf.addImage(barGraphImage, "PNG", 10, 10, 190, 80); // Adjust position and size
-
+    pdf.addImage(barGraphImage, "PNG", 10, 10, 190, 80);
     pdf.save("weekly-graphs.pdf");
   };
 
@@ -103,13 +100,10 @@ const WelcomePage = () => {
       let totalCalories = 0;
 
       while (totalCalories < targetCalories - 100) {
-        // Allow a 100 kcal margin
-
         const randomFood =
           healthyFoods[category][
             Math.floor(Math.random() * healthyFoods[category].length)
           ];
-
         if (totalCalories + randomFood.calories <= targetCalories + 100) {
           meal.push(randomFood);
           totalCalories += randomFood.calories;
@@ -117,7 +111,6 @@ const WelcomePage = () => {
           break;
         }
       }
-
       console.log(`${category} - Total Calories: ${totalCalories}`);
       return meal;
     };
@@ -130,7 +123,10 @@ const WelcomePage = () => {
     setMeals([
       { name: "Breakfast", items: breakfast },
       { name: "Lunch", items: lunch },
-      { name: "Dinner", items: dinner },
+      {
+        name: "Dinner",
+        items: dinner,
+      },
       { name: "Snacks", items: snacks },
     ]);
 
@@ -178,15 +174,12 @@ const WelcomePage = () => {
         </div>
       </div>
       <div className="completion-rate"></div>
-
       <button onClick={generateRandomMeals} className="meal-plan-button">
         Generate Meal Plan
       </button>
-
       <button onClick={handleDownloadPDF} className="pdf-download-button">
         PDF
       </button>
-
       <MealModal
         isOpen={isModalOpen}
         onClose={closeModal}

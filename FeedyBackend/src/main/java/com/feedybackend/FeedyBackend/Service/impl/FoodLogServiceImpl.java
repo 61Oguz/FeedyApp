@@ -32,7 +32,7 @@ public class FoodLogServiceImpl implements FoodLogService {
         foodLog.setFat(foodLogDTO.getFat());
         foodLog.setCarbs(foodLogDTO.getCarbs());
         foodLog.setPortionSize(foodLogDTO.getPortionSize());
-        foodLog.setPortionType(foodLogDTO.getPortionType()); // Set portion type
+        foodLog.setPortionType(foodLogDTO.getPortionType());
 
         foodLogRepo.save(foodLog);
     }
@@ -52,7 +52,7 @@ public class FoodLogServiceImpl implements FoodLogService {
                         foodLog.getFat(),
                         foodLog.getCarbs(),
                         foodLog.getPortionSize(),
-                        foodLog.getPortionType())) // Map portion type
+                        foodLog.getPortionType()))
                 .collect(Collectors.toList());
     }
 

@@ -184,7 +184,6 @@ const EducationPage = () => {
       {showQuiz && (
         <div className="modal-container">
           <div className="modal-window">
-            {/* "X" button to close the quiz */}
             <button className="close-button" onClick={handleCloseQuiz}>
               X
             </button>

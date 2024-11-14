@@ -10,7 +10,7 @@ import useSidebar from "../../Hooks/useSidebar.jsx";
 
 const ProfilePage = () => {
   const { isSidebarOpen, handleSidebarToggle } = useSidebar();
-  const { user, handleLogout, refreshUserData } = useAuth(); // Import user and refreshUserData
+  const { user, handleLogout, refreshUserData } = useAuth();
   const [formData, setFormData] = useState({
     userName: "",
     userEmail: "",
@@ -20,8 +20,8 @@ const ProfilePage = () => {
     weight: "",
   });
 
-  const [isFormModified, setIsFormModified] = useState(false); // Track if the form is modified
-  const [highlightedField, setHighlightedField] = useState(null); // Track the focused field for highlighting
+  const [isFormModified, setIsFormModified] = useState(false);
+  const [highlightedField, setHighlightedField] = useState(null);
 
   useEffect(() => {
     if (user) {
@@ -34,15 +34,15 @@ const ProfilePage = () => {
         weight: user.weight || "",
       });
     }
-  }, [user]); // This effect runs whenever the user data changes
+  }, [user]);
 
   const maintanenceCalories = () => {
     const BMR =
       10 * formData.weight +
       6.25 * formData.height -
       5 * formData.age +
-      (formData.sex === "male" ? 5 : -161); // Adjust for sex
-    return Math.round(BMR * 1.55); // Assuming moderate activity level
+      (formData.sex === "male" ? 5 : -161);
+    return Math.round(BMR * 1.55);
   };
 
   const handleChange = (e) => {
@@ -60,7 +60,6 @@ const ProfilePage = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      // Make API request to update user data
       await axios.put(
         `http://localhost:8080/api/user/${user.userId}`,
         formData,
@@ -95,8 +94,6 @@ const ProfilePage = () => {
       <div className="profile-wrapper">
         <form onSubmit={handleSubmit}>
           <h1>User Profile</h1>
-
-          {/* Username Input */}
           <div className="input-box">
             <input
               type="text"

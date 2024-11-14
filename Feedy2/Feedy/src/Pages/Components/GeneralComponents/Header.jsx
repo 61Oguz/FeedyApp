@@ -4,8 +4,8 @@ import "../../styles/Header.css";
 import PropTypes from "prop-types";
 
 const Header = ({ user, logout, isSidebarOpen }) => {
-  console.log("User in Header:", user); // Add this line for debugging
-  console.log("Logout function in Header:", logout); // Add t
+  console.log("User in Header:", user);
+  console.log("Logout function in Header:", logout);
 
   const capitalizeFirstLetter = (string) => {
     return string.charAt(0).toUpperCase() + string.slice(1).toLowerCase();

@@ -107,11 +107,11 @@ public class UserIMPL implements UserService {
 
   @Override
   public UserDTO updateUser(int id, UserDTO userDTO) {
-    // Fetch the existing user
+
     User existingUser = userRepo.findById(id)
             .orElseThrow(() -> new RuntimeException("User not found"));
 
-    // Update fields
+
     existingUser.setUserName(userDTO.getUserName());
     existingUser.setUserEmail(userDTO.getUserEmail());
     existingUser.setAge(userDTO.getAge());
@@ -119,7 +119,7 @@ public class UserIMPL implements UserService {
     existingUser.setHeight(userDTO.getHeight());
     existingUser.setWeight(userDTO.getWeight());
 
-    // Save updated user
+
     userRepo.save(existingUser);
     return new UserDTO(existingUser);
   }

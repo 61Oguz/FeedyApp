@@ -1,13 +1,13 @@
 .TodoWrapper {
   background-color: rgba(9, 82, 67, 0.73);
   border-radius: 10px;
-  width: 500px; /* Adjust as necessary */
+  width: 500px;
   max-width: 1500px;
-  position: fixed; /* Change to fixed */
-  top: 80px; /* Adjust top position */
+  position: fixed;
+  top: 80px;
   left: 16%;
-  overflow-y: auto; /* Add overflow for scrolling */
-  max-height: calc(100vh - 100px); /* Set max-height to fit within viewport */
+  overflow-y: auto;
+  max-height: calc(100vh - 100px);
   box-shadow: 0 0 10px rgba(1, 10, 10, 0.1);
   padding: 3rem 3rem 7.141rem;
   font-family: Georgia;
@@ -19,13 +19,13 @@
 .TodoWrapper.sidebar-closed {
   background-color: rgba(9, 82, 67, 0.73);
   border-radius: 10px;
-  width: 500px; /* Adjust as necessary */
+  width: 500px;
   max-width: 1500px;
-  position: fixed; /* Change to fixed */
-  top: 80px; /* Adjust top position */
+  position: fixed;
+  top: 80px;
   left: 10%;
-  overflow-y: auto; /* Add overflow for scrolling */
-  max-height: calc(100vh - 100px); /* Set max-height to fit within viewport */
+  overflow-y: auto;
+  max-height: calc(100vh - 100px);
   box-shadow: 0 0 10px rgba(1, 10, 10, 0.1);
   padding: 3rem 3rem 7.141rem;
   font-family: Georgia;
@@ -39,14 +39,14 @@
   backdrop-filter: blur(30 pxpx);
   padding: 0.2rem 4rem;
   border-radius: 10px;
-  width: 400px; /* Adjust as necessary */
+  width: 400px;
   max-width: 650px;
-  position: fixed; /* Fixed position */
-  top: 80px; /* Aligns with the TodoWrapper */
-  left: 60%; /* Adjust as necessary to position it near the TodoWrapper */
+  position: fixed;
+  top: 80px;
+  left: 60%;
   margin-top: 0;
   margin-left: 0;
-  max-height: calc(100vh - 100px); /* Set max-height to fit within viewport */
+  max-height: calc(100vh - 100px);
   box-shadow: 1px 0px 3px 3px rgba(9, 82, 67, 0.73);
   height: 295px;
 }
@@ -56,11 +56,11 @@
   backdrop-filter: blur(30 pxpx);
   padding: 0.3rem 4rem;
   border-radius: 10px;
-  width: 400px; /* Adjust as necessary */
+  width: 400px;
   max-width: 650px;
-  position: fixed; /* Fixed position */
-  top: 480px; /* Aligns with the TodoWrapper */
-  left: 60%; /* Adjust as necessary to position it near the TodoWrapper */
+  position: fixed;
+  top: 480px;
+  left: 60%;
   margin-top: -80px;
   margin-left: 0;
 
@@ -214,9 +214,9 @@
   .TodoWrapper {
     background-color: rgba(9, 82, 67, 0.73);
     border-radius: 10px;
-    width: 295px; /* Adjust as necessary */
-    position: fixed; /* Change to fixed */
-    top: 10px; /* Adjust top position */
+    width: 295px;
+    position: fixed;
+    top: 10px;
     left: 40%;
     box-shadow: 0 0 10px rgba(1, 10, 10, 0.1);
     font-family: Georgia;

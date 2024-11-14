@@ -135,8 +135,8 @@ const FoodLogPage = () => {
         portionSize: portionSize,
       });
       alert("Food log saved successfully!");
-      await fetchFoodLogs(); // Ensure fetch is awaited
-      await fetchDatesConsumption(); // Ensure this is updated too
+      await fetchFoodLogs();
+      await fetchDatesConsumption();
     } catch (error) {
       console.error("Error saving food log:", error);
     }
@@ -144,25 +144,25 @@ const FoodLogPage = () => {
 
   const handlePortionChange = async (log, change) => {
     const newPortionSize = log.portionSize + change;
-    if (newPortionSize < 1) return; // Prevent portion size from going below 1
+    if (newPortionSize < 1) return;
 
     try {
       await axios.put(`http://localhost:8080/api/foodlog/update`, {
         ...log,
         portionSize: newPortionSize,
       });
-      await fetchFoodLogs(); // Refresh the food logs after update
-      await fetchDatesConsumption(); // Update total values and graph after update
+      await fetchFoodLogs();
+      await fetchDatesConsumption();
     } catch (error) {
       console.error("Error updating portion size:", error);
     }
   };
 
   const handleDeleteLog = async (id) => {
-    console.log("Deleting log with id:", id); // Add this to log the id
+    console.log("Deleting log with id:", id);
     try {
       await axios.delete(`http://localhost:8080/api/foodlog/${id}`);
-      setFoodLogs((prevLogs) => prevLogs.filter((log) => log.id !== id)); // Remove deleted log from state
+      setFoodLogs((prevLogs) => prevLogs.filter((log) => log.id !== id));
       await fetchDatesConsumption();
     } catch (error) {
       console.error("Error deleting food log:", error);
@@ -278,16 +278,12 @@ const FoodLogPage = () => {
         ];
         tableRows.push(foodData);
       });
-
       pdf.autoTable(tableColumn, tableRows, { startY: 20 });
-
-      // Add pie chart as an image
       const chartElement = document.getElementById("pieChart"); // Ensure the Pie chart has an id
       const canvas = await html2canvas(chartElement, { scale: 2 });
       const imgData = canvas.toDataURL("image/png");
 
-      // Add the image to the PDF
-      const imgWidth = 120; // Width of the image in the PDF
+      const imgWidth = 120;
       const imgHeight = (canvas.height * imgWidth) / canvas.width;
       const position = pdf.autoTable.previous.finalY + 10; // Position below the table
 

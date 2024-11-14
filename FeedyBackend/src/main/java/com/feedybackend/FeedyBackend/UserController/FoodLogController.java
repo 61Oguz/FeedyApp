@@ -28,9 +28,9 @@ public class FoodLogController {
         return ResponseEntity.ok(foodLogs);
     }
 
-    @PutMapping("/update/{id}")  // Use log ID for updating
+    @PutMapping("/update/{id}")
     public ResponseEntity<?> updateFoodLog(@PathVariable int id, @RequestBody FoodLogDTO foodLogDTO) {
-        foodLogService.updateFoodLog(id, foodLogDTO);  // Update the log with the given ID
+        foodLogService.updateFoodLog(id, foodLogDTO);
         return ResponseEntity.ok("Food log updated successfully");
     }
 
@@ -40,9 +40,9 @@ public class FoodLogController {
         return ResponseEntity.ok(foodLogs);
     }
 
-    @DeleteMapping("/{id}")  // Use log ID for deleting
+    @DeleteMapping("/{id}")
     public ResponseEntity<?> deleteFoodLog(@PathVariable int id) {
-        foodLogService.deleteFoodLog(id);  // Delete the log with the given ID
+        foodLogService.deleteFoodLog(id);
         return ResponseEntity.ok("Food log deleted successfully");
     }
 }

@@ -21,8 +21,8 @@ const WelcomeWeeklyBarGraph = ({ calorieData, dailyCalorieNeed }) => {
         display: true,
         text: "Calorie Intakes of the Last Seven Days",
         font: {
-          size: 20, // Larger title font
-          weight: "bold", // Bold title
+          size: 20,
+          weight: "bold",
         },
       },
       tooltip: {
