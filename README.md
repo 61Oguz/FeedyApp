@@ -2,6 +2,6 @@ This web based application has been developed in the scope of my graduation thes
 ![SS-Web](https://github.com/user-attachments/assets/9b21af00-fe28-413a-b0f1-5ca7134928f8)
 
 <div style="display: flex; justify-content: space-around; flex-wrap: wrap;">
-   <img src="https://github.com/user-attachments/assets/1c785cb5-7c6b-4b88-bdd3-d070b556fd06"style="marginLeft:100px, width: 600px; margin: 10px;">
+   <img src="https://github.com/user-attachments/assets/1c785cb5-7c6b-4b88-bdd3-d070b556fd06"style="width: 600px; margin: 100px;">
 </div>
 
