@@ -204,7 +204,8 @@
 }
 
 .Welcome-Completion-GraphsFoodLog {
-  margin-top: 37px;
+  margin-top: 0px;
+  margin-right:90px;
 }
 
 @media (max-width: 768px) {
